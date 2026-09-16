@@ -71,6 +71,11 @@
   .draft{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-deep);background:var(--gold-soft);padding:8px 12px;margin-top:18px;display:inline-block}
   @media (max-width:860px){.grid{grid-template-columns:1fr;gap:34px}.lagen{grid-template-columns:1fr} nav.site{display:none} h2{font-size:26px}}
   @media (prefers-reduced-motion:no-preference){ summary{transition:color .15s} }
+  figure.photo{margin:0}
+  figure.photo img{display:block;width:100%;max-width:100%;aspect-ratio:16/9;object-fit:cover;background:var(--soft)}
+  figure.photo figcaption{font-size:13px;color:var(--muted);margin-top:10px;letter-spacing:.01em}
+  figure.hero{margin-top:36px}
+  figure.inline{margin:34px 0 8px}
 </style>
 </head>
 <body>
@@ -95,12 +100,23 @@
     <div class="rule"></div>
   </div>
 
+  <figure class="photo hero">
+    <img src="assets/dachterrasse-weinberge.jpg" alt="Dachterrasse mit Holzboden und Geländer, Blick über Weinberge und Villen am Stadtrand" width="1600" height="1200">
+    <figcaption>Dachterrasse mit Blick auf die Weinberge am Stadtrand. Objekt aus dem Avantgarde-Portfolio.</figcaption>
+  </figure>
+
   <div class="grid">
     <article>
 
       <h2>Was ein Penthouse in Wien auszeichnet</h2>
       <p>Der Begriff ist nicht geschützt, und in Inseraten wird er großzügig verwendet. In Wien meint ein Penthouse im engeren Sinn eine Wohnung im obersten Geschoss mit eigener, großzügiger Terrasse, freiem Blick und einer Erschließung, die dem Anspruch entspricht: Lift bis in die Wohnung, eigener Zugang, keine Nachbarn über dem Kopf. Alles darunter ist eine Dachgeschosswohnung. Der Unterschied zeigt sich im Preis, aber vor allem im Wohngefühl.</p>
       <p>Wien hat dafür zwei Quellen. Erstens die Dachgeschossausbauten der Gründerzeithäuser, die seit den 1990er-Jahren die Silhouette der inneren Bezirke verändert haben: Stahlbetonaufsätze auf Häusern aus dem 19. Jahrhundert, oft über zwei Ebenen, mit Terrassen zum Hof und zur Straße. Zweitens der Neubau, vom Donaukanal bis zu den Hochhausprojekten an der Donau, mit Raumhöhen, Haustechnik und Tiefgaragen, die ein Altbau nicht bieten kann. Beide haben ihre Käufer, und sie sind selten dieselben.</p>
+
+
+      <figure class="photo inline">
+        <img src="assets/altbau-galerie.jpg" alt="Wohnraum auf zwei Ebenen mit Galerie, freitragender Treppe und Bogenfenstern in einem Wiener Altbau" width="1600" height="1068" loading="lazy">
+        <figcaption>Zwei Ebenen im Altbau: Galerie, Bogenfenster, Stuck. Objekt aus dem Avantgarde-Portfolio.</figcaption>
+      </figure>
 
       <h2>Die Lagen</h2>
       <p>Wer ein Penthouse sucht, sucht zuerst einen Blick. Das schränkt die Auswahl auf wenige Lagen ein, in denen Höhe, Umgebung und Substanz zusammenkommen.</p>
