@@ -1,0 +1,2394 @@
+<!doctype html>
+<html lang="de-AT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Immobilienspiegel</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   IMMOBILIENSPIEGEL – Redaktionelles Magazin-Design
+   Palette: Tannengrün / Elfenbein / Messing
+   ============================================================ */
+
+:root {
+  --pine: #1e3a31;
+  --pine-deep: #142823;
+  --pine-soft: #2c4f43;
+  --brass: #a8874d;
+  --brass-bright: #c3a066;
+  --paper: #f7f4ed;
+  --paper-2: #efeade;
+  --card: #fffdf8;
+  --line: #ded7c6;
+  --ink: #22261f;
+  --text: #33372f;
+  --muted: #6d7268;
+  --serif: "Playfair Display", "Georgia", serif;
+  --body-serif: "Source Serif 4", "Georgia", serif;
+  --sans: "Inter", "Helvetica Neue", Arial, sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--paper);
+  color: var(--text);
+  font-family: var(--body-serif);
+  font-size: 1.06rem;
+  line-height: 1.72;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: var(--pine); text-decoration: none; }
+a:hover { color: var(--brass); }
+
+.wrap { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+
+/* ---------- Topbar ---------- */
+.topbar {
+  background: var(--pine-deep);
+  color: #e9e4d6;
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+}
+.topbar .wrap {
+  display: flex; justify-content: space-between; align-items: center;
+  min-height: 38px; gap: 16px;
+}
+.topbar a { color: #cfc7b2; }
+.topbar a:hover { color: var(--brass-bright); }
+.topbar .tb-right { display: flex; gap: 18px; }
+
+/* ---------- Masthead ---------- */
+.masthead {
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
+  padding: 34px 0 22px;
+  text-align: center;
+}
+.brand { display: inline-flex; flex-direction: column; align-items: center; gap: 10px; }
+.brand-img { max-height: 74px; width: auto; }
+.brand-word {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: clamp(1.7rem, 4.2vw, 2.6rem);
+  letter-spacing: 0.12em;
+  color: var(--pine);
+  text-transform: uppercase;
+  line-height: 1;
+}
+.brand-word .spiegel { color: var(--brass); }
+.brand-claim {
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+/* ---------- Navigation ---------- */
+.nav {
+  background: var(--pine);
+  position: sticky; top: 0; z-index: 50;
+  box-shadow: 0 2px 14px rgba(20, 40, 35, 0.18);
+}
+.nav .wrap { display: flex; justify-content: center; flex-wrap: wrap; }
+.nav a {
+  color: #e9e4d6;
+  font-family: var(--sans);
+  font-size: 0.86rem;
+  font-weight: 500;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  padding: 15px 20px;
+  display: inline-block;
+  border-bottom: 3px solid transparent;
+  transition: all 0.18s ease;
+}
+.nav a:hover, .nav a.active { color: var(--brass-bright); border-bottom-color: var(--brass); }
+
+/* ---------- Kicker & Meta ---------- */
+.kicker {
+  font-family: var(--sans);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--brass);
+  display: inline-block;
+}
+.meta {
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  color: var(--muted);
+  display: flex; flex-wrap: wrap; gap: 8px 18px; align-items: center;
+}
+.meta .dot::before { content: "·"; margin-right: 8px; color: var(--brass); }
+
+/* ---------- Hero ---------- */
+.hero { padding: 52px 0 46px; border-bottom: 1px solid var(--line); }
+.hero-grid { display: grid; grid-template-columns: 1.55fr 1fr; gap: 44px; align-items: stretch; }
+.hero-story { display: flex; flex-direction: column; gap: 16px; justify-content: center; }
+.hero-story h1 {
+  font-family: var(--serif);
+  font-size: clamp(1.8rem, 3.6vw, 2.7rem);
+  line-height: 1.16;
+  color: var(--ink);
+  font-weight: 700;
+}
+.hero-story h1 a { color: var(--ink); }
+.hero-story h1 a:hover { color: var(--pine); }
+.hero-story p.lede { font-size: 1.12rem; color: var(--text); }
+.btn {
+  display: inline-block;
+  background: var(--pine);
+  color: #f3efe3;
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 13px 26px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.18s ease;
+}
+.btn:hover { background: var(--brass); color: #fff; }
+.btn.ghost { background: transparent; color: var(--pine); border: 1px solid var(--pine); }
+.btn.ghost:hover { background: var(--pine); color: #f3efe3; }
+
+/* Marktdaten-Panel */
+.market-panel {
+  background: var(--pine);
+  color: #e9e4d6;
+  padding: 30px 30px 24px;
+  display: flex; flex-direction: column;
+}
+.market-panel h3 {
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--brass-bright);
+  margin-bottom: 18px;
+}
+.market-row {
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding: 11px 0;
+  border-bottom: 1px solid rgba(233, 228, 214, 0.14);
+  font-family: var(--sans);
+  font-size: 0.9rem;
+}
+.market-row:last-of-type { border-bottom: none; }
+.market-row .loc { color: #e9e4d6; }
+.market-row .val { font-weight: 600; color: #fff; white-space: nowrap; }
+.market-note {
+  margin-top: auto; padding-top: 14px;
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  color: rgba(233, 228, 214, 0.65);
+  line-height: 1.5;
+}
+.market-note a { color: var(--brass-bright); }
+
+/* ---------- Sections ---------- */
+.section { padding: 54px 0; }
+.section.tinted { background: var(--paper-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.section-head {
+  display: flex; justify-content: space-between; align-items: baseline;
+  border-bottom: 2px solid var(--pine);
+  padding-bottom: 10px; margin-bottom: 30px;
+}
+.section-head h2 {
+  font-family: var(--serif);
+  font-size: 1.55rem;
+  color: var(--ink);
+}
+.section-head .all-link { font-family: var(--sans); font-size: 0.82rem; letter-spacing: 0.06em; text-transform: uppercase; }
+
+/* Cards */
+.card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.card-grid.two { grid-template-columns: repeat(2, 1fr); }
+.card-media { margin: -26px -26px 2px; }
+.card-media img { width: 100%; height: 176px; object-fit: cover; display: block; }
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  padding: 26px 26px 22px;
+  display: flex; flex-direction: column; gap: 12px;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.card:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(34, 38, 31, 0.09); }
+.card h3 { font-family: var(--serif); font-size: 1.22rem; line-height: 1.3; }
+.card h3 a { color: var(--ink); }
+.card h3 a:hover { color: var(--pine); }
+.card p { font-size: 0.97rem; color: var(--text); }
+.card .meta { margin-top: auto; padding-top: 8px; }
+
+/* ---------- Zahlenband ---------- */
+.stats-band { background: var(--pine-deep); color: #e9e4d6; padding: 44px 0; }
+.stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; text-align: center; }
+.stat .num {
+  font-family: var(--serif);
+  font-size: 2.1rem;
+  font-weight: 700;
+  color: var(--brass-bright);
+  line-height: 1.1;
+}
+.stat .lbl { font-family: var(--sans); font-size: 0.8rem; letter-spacing: 0.06em; color: rgba(233,228,214,0.8); margin-top: 6px; }
+.stats-src { text-align: center; margin-top: 26px; font-family: var(--sans); font-size: 0.73rem; color: rgba(233,228,214,0.55); }
+.stats-src a { color: var(--brass-bright); }
+
+/* ---------- Newsletter ---------- */
+.newsletter {
+  background: var(--card);
+  border: 1px solid var(--brass);
+  padding: 40px;
+  display: grid; grid-template-columns: 1.3fr 1fr; gap: 30px; align-items: center;
+}
+.newsletter h2 { font-family: var(--serif); font-size: 1.5rem; color: var(--ink); margin-bottom: 8px; }
+.newsletter p { font-size: 0.95rem; color: var(--muted); }
+.nl-form { display: flex; gap: 10px; }
+.nl-form input {
+  flex: 1;
+  padding: 13px 16px;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  color: var(--ink);
+}
+.nl-form input:focus { outline: 2px solid var(--brass); border-color: var(--brass); }
+
+/* ---------- Artikel-Layout ---------- */
+.article-head { padding: 52px 0 30px; border-bottom: 1px solid var(--line); }
+.article-head h1 {
+  font-family: var(--serif);
+  font-size: clamp(1.9rem, 3.8vw, 2.8rem);
+  line-height: 1.15;
+  color: var(--ink);
+  margin: 14px 0 16px;
+  max-width: 900px;
+}
+.article-head .lede { font-size: 1.18rem; color: var(--text); max-width: 820px; margin-bottom: 18px; }
+
+.article-body { padding: 44px 0 60px; }
+.article-grid { display: grid; grid-template-columns: minmax(0, 760px) 320px; gap: 56px; }
+.article-grid > * { min-width: 0; }
+
+/* Artikel-Aufmacherbild */
+.article-lead { margin: 0 0 6px; }
+.article-lead img {
+  width: 100%;
+  height: clamp(240px, 34vw, 400px);
+  object-fit: cover;
+  display: block;
+  border: 1px solid var(--line);
+}
+.article-lead figcaption {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  color: var(--muted);
+  text-align: right;
+  padding-top: 7px;
+}
+.article-lead figcaption a { color: var(--muted); text-decoration: underline; }
+.article-content > * + * { margin-top: 1.15em; }
+.article-content h2 {
+  font-family: var(--serif);
+  font-size: 1.65rem;
+  color: var(--ink);
+  margin-top: 1.9em;
+  padding-top: 0.6em;
+  border-top: 2px solid var(--pine);
+}
+.article-content h3 { font-family: var(--serif); font-size: 1.25rem; color: var(--ink); margin-top: 1.6em; }
+.article-content ul, .article-content ol { padding-left: 1.4em; }
+.article-content li + li { margin-top: 0.5em; }
+.article-content blockquote {
+  border-left: 3px solid var(--brass);
+  padding: 6px 0 6px 22px;
+  font-style: italic;
+  color: var(--pine);
+  font-size: 1.12rem;
+}
+.article-content .hinweis {
+  background: var(--paper-2);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--brass);
+  padding: 18px 22px;
+  font-size: 0.95rem;
+  font-family: var(--sans);
+  line-height: 1.6;
+}
+
+/* Tabellen */
+.table-scroll { overflow-x: auto; border: 1px solid var(--line); background: var(--card); }
+table.vgl { border-collapse: collapse; width: 100%; min-width: 720px; font-family: var(--sans); font-size: 0.88rem; }
+table.vgl caption {
+  text-align: left; font-family: var(--sans); font-size: 0.78rem;
+  color: var(--muted); padding: 12px 14px; caption-side: bottom;
+}
+table.vgl th {
+  background: var(--pine);
+  color: #f0ecdf;
+  text-align: left;
+  padding: 12px 14px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+}
+table.vgl td { padding: 12px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
+table.vgl tr:nth-child(even) td { background: rgba(239, 234, 222, 0.5); }
+table.vgl tr.highlight td { background: rgba(168, 135, 77, 0.13); border-bottom-color: var(--brass); }
+table.vgl .check { color: var(--pine); font-weight: 700; }
+table.vgl .minus { color: var(--muted); }
+
+/* Testsieger-Box */
+.winner-box {
+  background: var(--pine);
+  color: #ece7d8;
+  padding: 30px 32px;
+  margin: 2em 0;
+}
+.winner-box .kicker { color: var(--brass-bright); }
+.winner-box h3 { font-family: var(--serif); font-size: 1.45rem; color: #fff; margin: 8px 0 10px; }
+.winner-box p { font-size: 0.98rem; }
+.winner-box a { color: var(--brass-bright); text-decoration: underline; }
+
+/* Anbieter-Profile */
+.profil {
+  background: var(--card);
+  border: 1px solid var(--line);
+  padding: 26px 28px;
+  margin-top: 1.4em;
+}
+.profil .p-head { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
+.profil h3 { font-family: var(--serif); font-size: 1.3rem; color: var(--ink); margin: 0; }
+.profil .rank {
+  font-family: var(--sans); font-size: 0.75rem; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--brass);
+}
+.profil .p-fakten {
+  font-family: var(--sans); font-size: 0.84rem; color: var(--muted);
+  margin: 10px 0 12px; line-height: 1.55;
+}
+.profil.winner { border: 2px solid var(--brass); background: #fffcf4; }
+
+/* FAQ */
+.faq details {
+  background: var(--card);
+  border: 1px solid var(--line);
+  margin-top: 12px;
+}
+.faq summary {
+  cursor: pointer;
+  padding: 16px 20px;
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 0.98rem;
+  color: var(--ink);
+  list-style: none;
+  position: relative;
+  padding-right: 44px;
+}
+.faq summary::after { content: "+"; position: absolute; right: 20px; top: 14px; color: var(--brass); font-size: 1.3rem; }
+.faq details[open] summary::after { content: "–"; }
+.faq details p { padding: 0 20px 18px; font-size: 0.97rem; }
+
+/* Quellen */
+.quellen {
+  margin-top: 3em;
+  padding: 24px 26px;
+  background: var(--paper-2);
+  border: 1px solid var(--line);
+  font-family: var(--sans);
+  font-size: 0.85rem;
+}
+.quellen h2, .quellen h3 { font-family: var(--sans); font-size: 0.8rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--pine); border: none; margin: 0 0 12px; padding: 0; }
+.quellen ol { padding-left: 1.3em; }
+.quellen li { margin-top: 6px; line-height: 1.55; }
+.quellen a { word-break: break-word; }
+
+/* Sidebar */
+.sidebar > div { background: var(--card); border: 1px solid var(--line); padding: 24px; margin-bottom: 26px; }
+.sidebar h4 {
+  font-family: var(--sans); font-size: 0.76rem; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--pine);
+  border-bottom: 2px solid var(--brass);
+  padding-bottom: 8px; margin-bottom: 14px;
+}
+.sidebar ul { list-style: none; }
+.sidebar li { padding: 9px 0; border-bottom: 1px solid var(--line); font-size: 0.93rem; line-height: 1.45; }
+.sidebar li:last-child { border-bottom: none; }
+.sidebar .mini-meta { font-family: var(--sans); font-size: 0.74rem; color: var(--muted); display: block; margin-top: 3px; }
+
+/* ---------- Footer ---------- */
+footer { background: var(--pine-deep); color: #cfc9b8; margin-top: 70px; }
+.foot-grid {
+  display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 40px;
+  padding: 52px 0 40px;
+}
+.foot-brand {
+  font-family: var(--serif); font-weight: 700; font-size: 1.25rem;
+  letter-spacing: 0.1em; text-transform: uppercase; color: #f0ecdf;
+}
+.foot-brand .spiegel { color: var(--brass-bright); }
+.foot-grid p { font-size: 0.88rem; line-height: 1.65; margin-top: 12px; font-family: var(--sans); color: rgba(207, 201, 184, 0.85); }
+.foot-grid h5 {
+  font-family: var(--sans); font-size: 0.74rem; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--brass-bright); margin-bottom: 14px;
+}
+.foot-grid ul { list-style: none; }
+.foot-grid li { margin-top: 9px; font-family: var(--sans); font-size: 0.88rem; }
+.foot-grid a { color: #cfc9b8; }
+.foot-grid a:hover { color: var(--brass-bright); }
+.foot-legal {
+  border-top: 1px solid rgba(207, 201, 184, 0.18);
+  padding: 18px 0 26px;
+  font-family: var(--sans);
+  font-size: 0.76rem;
+  color: rgba(207, 201, 184, 0.6);
+  display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px;
+}
+
+/* Breadcrumb */
+.breadcrumb { font-family: var(--sans); font-size: 0.78rem; color: var(--muted); padding-top: 26px; }
+.breadcrumb a { color: var(--muted); }
+.breadcrumb a:hover { color: var(--brass); }
+
+/* ---------- Feature-Karte (Aufmacher) ---------- */
+.feature-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--brass);
+  box-shadow: 0 16px 44px rgba(34, 38, 31, 0.10);
+  display: flex; flex-direction: column;
+}
+.fc-media { position: relative; }
+.fc-media img { width: 100%; height: clamp(220px, 30vw, 340px); object-fit: cover; }
+.badge {
+  position: absolute; top: 16px; left: 16px;
+  background: var(--pine);
+  color: #f0ecdf;
+  font-family: var(--sans); font-size: 0.7rem; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  padding: 7px 13px;
+  box-shadow: 0 4px 14px rgba(20, 40, 35, 0.35);
+}
+.badge .b-gold { color: var(--brass-bright); }
+.fc-credit {
+  font-family: var(--sans); font-size: 0.67rem; color: var(--muted);
+  text-align: right; padding: 6px 14px 0;
+}
+.fc-credit a { color: var(--muted); text-decoration: underline; }
+.fc-body { padding: 18px 30px 28px; display: flex; flex-direction: column; gap: 14px; }
+.fc-body h1 {
+  font-family: var(--serif);
+  font-size: clamp(1.5rem, 2.8vw, 2.15rem);
+  line-height: 1.18;
+  color: var(--ink);
+  font-weight: 700;
+}
+.fc-body h1 a { color: var(--ink); }
+.fc-body h1 a:hover { color: var(--pine); }
+.fc-body .lede { font-size: 1.05rem; color: var(--text); }
+
+/* ---------- Meist gelesen (Toplist) ---------- */
+.toplist { background: var(--card); border: 1px solid var(--line); padding: 26px 26px 14px; display: flex; flex-direction: column; }
+.toplist h3 {
+  font-family: var(--sans); font-size: 0.76rem; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--pine);
+  border-bottom: 2px solid var(--brass);
+  padding-bottom: 9px; margin-bottom: 6px;
+}
+.toplist ol { list-style: none; counter-reset: top; }
+.toplist li { counter-increment: top; display: flex; gap: 16px; align-items: baseline; padding: 15px 0; border-bottom: 1px solid var(--line); }
+.toplist li:last-child { border-bottom: none; }
+.toplist li::before {
+  content: counter(top, decimal-leading-zero);
+  font-family: var(--serif);
+  font-size: 1.45rem; font-weight: 700;
+  color: var(--brass);
+  line-height: 1;
+}
+.toplist a { color: var(--ink); font-family: var(--body-serif); font-size: 0.97rem; font-weight: 600; line-height: 1.4; display: block; }
+.toplist a:hover { color: var(--pine); }
+.toplist .mini-meta { font-family: var(--sans); font-size: 0.74rem; color: var(--muted); display: block; margin-top: 4px; font-weight: 400; }
+
+/* ---------- Zitat-Band ---------- */
+.quote-band { background: var(--pine-deep); color: #ece7d8; padding: 60px 0; text-align: center; }
+.quote-band .q-mark { font-family: var(--serif); font-size: 3rem; color: var(--brass-bright); line-height: 0.4; display: block; margin-bottom: 18px; }
+.quote-band blockquote {
+  font-family: var(--serif); font-style: italic;
+  font-size: clamp(1.25rem, 2.6vw, 1.8rem);
+  line-height: 1.45;
+  max-width: 880px; margin: 0 auto;
+  border: none; padding: 0; color: #f0ecdf;
+}
+.quote-band cite {
+  display: block; margin-top: 20px;
+  font-family: var(--sans); font-style: normal;
+  font-size: 0.78rem; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--brass-bright);
+}
+
+/* ---------- Ressorts ---------- */
+.ressort-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+.ressort {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-bottom: 3px solid var(--brass);
+  padding: 26px 24px 22px;
+  display: block;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.ressort:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(34, 38, 31, 0.09); }
+.ressort .r-num { font-family: var(--serif); font-size: 1.1rem; font-weight: 700; color: var(--brass); display: block; margin-bottom: 10px; }
+.ressort h3 { font-family: var(--serif); font-size: 1.15rem; color: var(--ink); margin-bottom: 8px; }
+.ressort p { font-family: var(--sans); font-size: 0.84rem; color: var(--muted); line-height: 1.55; }
+
+/* ---------- Folgen Sie uns ---------- */
+.social-section { text-align: center; }
+.social-section h2 { font-family: var(--serif); font-size: 1.55rem; color: var(--ink); }
+.social-section .social-sub { font-family: var(--sans); font-size: 0.92rem; color: var(--muted); margin-top: 8px; }
+.social-row { display: flex; justify-content: center; gap: 18px; flex-wrap: wrap; margin-top: 26px; }
+.social-btn {
+  width: 54px; height: 54px;
+  border: 1.5px solid var(--pine);
+  border-radius: 50%;
+  display: inline-flex; align-items: center; justify-content: center;
+  color: var(--pine);
+  transition: all 0.18s ease;
+}
+.social-btn svg { width: 22px; height: 22px; fill: currentColor; }
+.social-btn:hover { background: var(--pine); color: var(--brass-bright); transform: translateY(-3px); }
+.social-note { margin-top: 18px; font-family: var(--sans); font-size: 0.78rem; color: var(--muted); }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 960px) {
+  .hero-grid, .article-grid, .newsletter { grid-template-columns: 1fr; }
+  .card-grid, .card-grid.two { grid-template-columns: 1fr 1fr; }
+  .stats-grid, .ressort-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
+  .foot-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 620px) {
+  .card-grid, .card-grid.two, .ressort-grid { grid-template-columns: 1fr; }
+  .nav a { padding: 13px 12px; font-size: 0.78rem; }
+  .topbar .tb-right { display: none; }
+  .foot-grid { grid-template-columns: 1fr; }
+  .fc-body { padding: 16px 20px 22px; }
+}
+
+section.pg[hidden]{display:none} a[data-page]{cursor:pointer}
+</style>
+</head>
+<body>
+<div style="background:#142823;color:#e9e4d6;font:600 12px/1.5 Inter,Arial,sans-serif;letter-spacing:.06em;text-transform:uppercase;text-align:center;padding:8px 16px">Vorschau · Arbeitsstand 16. September 2026 · nicht veröffentlicht · Impressum und Offenlegung werden vor Go-live mit den Daten des Medieninhabers befüllt</div>
+<section class="pg" id="pg-start" data-title="Immobilienspiegel – Das Magazin für den österreichischen Immobilienmarkt" hidden>
+
+
+<div class="topbar">
+  <div class="wrap">
+    <span>Wien · Mittwoch, 16. September 2026</span>
+    <span class="tb-right">
+      <a data-page="ueber-uns">Über die Redaktion</a>
+      <a data-page="impressum">Impressum und Offenlegung</a>
+    </span>
+  </div>
+</div>
+
+<header class="masthead">
+  <a class="brand" data-page="start" aria-label="Immobilienspiegel Startseite">
+    <img src="assets/logo.png" alt="Immobilienspiegel Logo" class="brand-img"
+         onload="document.getElementById('wm-fallback').style.display='none'"
+         onerror="this.style.display='none'">
+    <span id="wm-fallback" style="display:flex;flex-direction:column;align-items:center;gap:10px">
+      <svg width="52" height="66" viewBox="0 0 56 72" fill="none" aria-hidden="true">
+        <path d="M5 69 V26 Q5 6 28 6 Q51 6 51 26 V69" stroke="#a8874d" stroke-width="2.6"/>
+        <line x1="11" y1="44" x2="45" y2="44" stroke="#a8874d" stroke-width="1.2"/>
+        <g stroke="#1e3a31" stroke-width="2">
+          <path d="M17 28 L28 19 L39 28"/>
+          <line x1="20" y1="31" x2="20" y2="40"/>
+          <line x1="28" y1="31" x2="28" y2="40"/>
+          <line x1="36" y1="31" x2="36" y2="40"/>
+        </g>
+        <g stroke="#1e3a31" stroke-width="2" opacity="0.32">
+          <path d="M17 60 L28 69 L39 60"/>
+          <line x1="20" y1="57" x2="20" y2="48"/>
+          <line x1="28" y1="57" x2="28" y2="48"/>
+          <line x1="36" y1="57" x2="36" y2="48"/>
+        </g>
+      </svg>
+      <span class="brand-word">Immobilien<span class="spiegel">spiegel</span></span>
+    </span>
+    <span class="brand-claim">Das Magazin für den österreichischen Immobilienmarkt</span>
+  </a>
+</header>
+
+<nav class="nav" aria-label="Hauptnavigation">
+  <div class="wrap">
+    <a data-page="start" class="active">Start</a>
+    <a data-page="marktbericht">Markt und Preise</a>
+    <a data-page="bezirke">Lagen und Bezirke</a>
+    <a data-page="vergleich">Anbieter im Vergleich</a>
+    <a data-page="kaufnebenkosten">Ratgeber</a>
+    <a data-page="ueber-uns">Über uns</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <article class="feature-card">
+      <div class="fc-media">
+        <a data-page="vergleich">
+          <img src="assets/hero-wien.jpg" alt="Blick über die Dächer der Wiener Innenstadt vom Südturm des Stephansdoms">
+        </a>
+        <span class="badge">Artikel · <span class="b-gold">Der große Anbietervergleich 2026</span></span>
+      </div>
+      <div class="fc-credit">Foto: <a href="https://commons.wikimedia.org/wiki/File:Wien,_Stephansdom,_Blick_vom_S%C3%BCdturm_--_2018_--_3271-3.jpg" rel="nofollow">Dietmar Rabich</a>, Ausschnitt, <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.de" rel="nofollow">CC BY-SA 4.0</a>, via Wikimedia Commons</div>
+      <div class="fc-body">
+        <h1><a data-page="vergleich">Die besten Makler für Luxusimmobilien in Wien: sieben Anbieter im Vergleich</a></h1>
+        <p class="lede">Wer eine Villa in Döbling oder ein Palais-Apartment in der Inneren Stadt kaufen oder verkaufen will, findet in Wien eine Handvoll spezialisierter Adressen. Der Immobilienspiegel hat sieben Anbieter nach dokumentierten, öffentlich nachprüfbaren Kriterien verglichen.</p>
+        <div class="meta">
+          <span>Redaktion Immobilienspiegel</span>
+          <span class="dot">6. August 2026</span>
+          <span class="dot">14 Min. Lesezeit</span>
+        </div>
+        <p><a class="btn" data-page="vergleich">Artikel lesen</a></p>
+      </div>
+    </article>
+    <aside class="toplist" aria-label="Meist gelesene Beiträge">
+      <h3>Meist gelesen</h3>
+      <ol>
+        <li>
+          <div>
+            <a data-page="vergleich">Die besten Makler für Luxusimmobilien in Wien: der Vergleich</a>
+            <span class="mini-meta">Anbieter im Vergleich · 6. August 2026</span>
+          </div>
+        </li>
+        <li>
+          <div>
+            <a data-page="marktbericht">Marktbericht 2026: Was Luxusimmobilien in Wien jetzt kosten</a>
+            <span class="mini-meta">Markt und Preise · 28. Juli 2026</span>
+          </div>
+        </li>
+        <li>
+          <div>
+            <a data-page="bezirke">Die besten Bezirke für Luxusimmobilien in Wien</a>
+            <span class="mini-meta">Lagen und Bezirke · 21. Juli 2026</span>
+          </div>
+        </li>
+        <li>
+          <div>
+            <a data-page="off-market">Off-Market: Wie der stille Handel funktioniert</a>
+            <span class="mini-meta">Diskreter Markt · 30. Juli 2026</span>
+          </div>
+        </li>
+      </ol>
+    </aside>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Analysen und Vergleiche</h2>
+      <a class="all-link" data-page="vergleich">Alle Analysen</a>
+    </div>
+    <div class="card-grid">
+      <article class="card">
+        <div class="card-media"><img src="assets/artikel-kohlmarkt.jpg" alt="Der Kohlmarkt in der Wiener Innenstadt mit Blick Richtung Hofburg" loading="lazy"></div>
+        <span class="kicker">Anbieter im Vergleich</span>
+        <h3><a data-page="vergleich">Luxusmakler in Wien: Wer bietet was? Der Kriterienvergleich</a></h3>
+        <p>Sieben spezialisierte Anbieter, fünf harte Kriterien, alle Quellen verlinkt. Mit Vergleichstabelle, Einzelprofilen und einer klaren Empfehlung je Anforderungsprofil.</p>
+        <div class="meta"><span>6. August 2026</span><span class="dot">14 Min.</span></div>
+      </article>
+      <article class="card">
+        <div class="card-media"><img src="assets/artikel-skyline.jpg" alt="Skyline von Wien an der Donau" loading="lazy"></div>
+        <span class="kicker">Markt und Preise</span>
+        <h3><a data-page="marktbericht">Marktbericht 2026: Was Luxusimmobilien in Wien jetzt kosten</a></h3>
+        <p>Quadratmeterpreise in den Spitzenlagen, Preisentwicklung nach der Zinswende und warum das Angebot im obersten Segment knapp bleibt. Mit allen Datenquellen.</p>
+        <div class="meta"><span>28. Juli 2026</span><span class="dot">9 Min.</span></div>
+      </article>
+      <article class="card">
+        <div class="card-media"><img src="assets/artikel-grinzing.jpg" alt="Weinberge in Grinzing oberhalb von Wien" loading="lazy"></div>
+        <span class="kicker">Lagen und Bezirke</span>
+        <h3><a data-page="bezirke">Die besten Bezirke für Luxusimmobilien in Wien</a></h3>
+        <p>Innere Stadt, Döbling, Hietzing, Währing und die stillen Aufsteiger: Was die Wiener Top-Lagen unterscheidet und für wen welcher Bezirk passt.</p>
+        <div class="meta"><span>21. Juli 2026</span><span class="dot">10 Min.</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="quote-band">
+  <div class="wrap">
+    <span class="q-mark">„</span>
+    <blockquote>Die Straßen Wiens sind mit Kultur gepflastert, die Straßen anderer Städte mit Asphalt.</blockquote>
+    <cite>Karl Kraus · Schriftsteller, 1874 bis 1936</cite>
+  </div>
+</section>
+
+<section class="section tinted">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Ratgeber</h2>
+      <a class="all-link" data-page="kaufnebenkosten">Alle Ratgeber</a>
+    </div>
+    <div class="card-grid two">
+      <article class="card">
+        <div class="card-media"><img src="assets/artikel-justizpalast.jpg" alt="Justitia-Statue im Wiener Justizpalast" loading="lazy"></div>
+        <span class="kicker">Kauf und Recht</span>
+        <h3><a data-page="kaufnebenkosten">Kaufnebenkosten in Österreich: Mit diesen Posten müssen Käufer rechnen</a></h3>
+        <p>Grunderwerbsteuer, Grundbucheintragung, Maklerhonorar, Vertragserrichtung: Der komplette Überblick mit Rechenbeispiel für eine Wohnung um 2 Millionen Euro.</p>
+        <div class="meta"><span>14. Juli 2026</span><span class="dot">7 Min.</span></div>
+      </article>
+      <article class="card">
+        <div class="card-media"><img src="assets/artikel-palais.jpg" alt="Fassade des Palais Kinsky in Wien" loading="lazy"></div>
+        <span class="kicker">Diskreter Markt</span>
+        <h3><a data-page="off-market">Off-Market: Wie der stille Handel mit Wiener Luxusimmobilien funktioniert</a></h3>
+        <p>Ein erheblicher Teil der Top-Objekte wird nie öffentlich inseriert. Wer Zugang zu diesem Markt bekommt und worauf Verkäufer achten sollten.</p>
+        <div class="meta"><span>30. Juli 2026</span><span class="dot">6 Min.</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Unsere Ressorts</h2>
+    </div>
+    <div class="ressort-grid">
+      <a class="ressort" data-page="marktbericht">
+        <span class="r-num">I.</span>
+        <h3>Markt und Preise</h3>
+        <p>Preisdaten, Marktberichte und Einordnung: was der österreichische Markt gerade macht.</p>
+      </a>
+      <a class="ressort" data-page="bezirke">
+        <span class="r-num">II.</span>
+        <h3>Lagen und Bezirke</h3>
+        <p>Von der Inneren Stadt bis ins Cottage: Wiens Adressen im Porträt.</p>
+      </a>
+      <a class="ressort" data-page="vergleich">
+        <span class="r-num">III.</span>
+        <h3>Anbieter im Vergleich</h3>
+        <p>Makler, Netzwerke und Services, verglichen nach offengelegten Kriterien.</p>
+      </a>
+      <a class="ressort" data-page="kaufnebenkosten">
+        <span class="r-num">IV.</span>
+        <h3>Ratgeber</h3>
+        <p>Kauf, Verkauf, Kosten und Recht: Wissen für die größte Transaktion des Lebens.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="newsletter">
+      <div>
+        <h2>Der Marktüberblick, einmal im Monat</h2>
+        <p>Preisdaten, neue Analysen und die wichtigsten Entwicklungen am österreichischen Immobilienmarkt. Kostenlos, jederzeit abbestellbar.</p>
+      </div>
+      <form class="nl-form" action="#" method="post" aria-label="Newsletter-Anmeldung">
+        <input type="email" name="email" placeholder="Ihre E-Mail-Adresse" required>
+        <button class="btn" type="submit">Anmelden</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="section tinted social-section">
+  <div class="wrap">
+    <h2>Folgen Sie uns</h2>
+    <p class="social-sub">Neue Analysen, Marktdaten und Lagen-Porträts auch auf unseren Kanälen.</p>
+    <div class="social-row">
+      <a class="social-btn" href="https://www.instagram.com/immobilienspiegel/" rel="noopener" aria-label="Immobilienspiegel auf Instagram">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.72 3.72 0 0 1-1.38-.9 3.72 3.72 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63a5.88 5.88 0 0 0-2.13 1.38A5.88 5.88 0 0 0 .63 4.14C.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.72 1.46 1.38 2.13a5.88 5.88 0 0 0 2.13 1.38c.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.88 5.88 0 0 0 2.13-1.38 5.88 5.88 0 0 0 1.38-2.13c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.88 5.88 0 0 0-1.38-2.13A5.88 5.88 0 0 0 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0zm0 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zm0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4zm7.84-10.4a1.44 1.44 0 1 1-1.44-1.44 1.44 1.44 0 0 1 1.44 1.44z"/></svg>
+      </a>
+      <a class="social-btn" href="https://www.linkedin.com/company/immobilienspiegel/" rel="noopener" aria-label="Immobilienspiegel auf LinkedIn">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05a3.74 3.74 0 0 1 3.37-1.85c3.6 0 4.27 2.37 4.27 5.46zM5.34 7.43a2.06 2.06 0 1 1 2.06-2.06 2.06 2.06 0 0 1-2.06 2.06zM7.12 20.45H3.55V9h3.57zM22.22 0H1.77A1.75 1.75 0 0 0 0 1.73v20.54A1.75 1.75 0 0 0 1.77 24h20.45A1.76 1.76 0 0 0 24 22.27V1.73A1.76 1.76 0 0 0 22.22 0z"/></svg>
+      </a>
+      <a class="social-btn" href="https://www.facebook.com/immobilienspiegel/" rel="noopener" aria-label="Immobilienspiegel auf Facebook">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07c0 6.02 4.39 11.02 10.13 11.93v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.7 4.53-4.7 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.96.93-1.96 1.89v2.26h3.33l-.53 3.49h-2.8V24C19.61 23.09 24 18.09 24 12.07z"/></svg>
+      </a>
+      <a class="social-btn" href="https://x.com/immobilienspgl" rel="noopener" aria-label="Immobilienspiegel auf X">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 1.15h3.68l-8.04 9.19L24 22.85h-7.41l-5.8-7.58-6.64 7.58H.47l8.6-9.83L0 1.15h7.59l5.24 6.93zm-1.29 19.5h2.04L6.48 3.24H4.3z"/></svg>
+      </a>
+      <a class="social-btn" href="https://www.youtube.com/@immobilienspiegel" rel="noopener" aria-label="Immobilienspiegel auf YouTube">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.5A3.02 3.02 0 0 0 .5 6.19C0 8.07 0 12 0 12s0 3.93.5 5.81a3.02 3.02 0 0 0 2.12 2.14c1.88.5 9.38.5 9.38.5s7.5 0 9.38-.5a3.02 3.02 0 0 0 2.12-2.14C24 15.93 24 12 24 12s0-3.93-.5-5.81zM9.55 15.57V8.43L15.82 12z"/></svg>
+      </a>
+    </div>
+    <p class="social-note">Die Kanäle werden derzeit aufgebaut; Handles vor Go-live final abstimmen.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">Immobilien<span class="spiegel">spiegel</span></div>
+        <p>Der Immobilienspiegel ist ein redaktionelles Online-Magazin zum österreichischen Immobilienmarkt mit Schwerpunkt Wien und Luxussegment. Alle Übersichten und Reihungen folgen der im jeweiligen Beitrag dokumentierten Methodik mit öffentlich nachprüfbaren Quellen.</p>
+      </div>
+      <div>
+        <h5>Rubriken</h5>
+        <ul>
+          <li><a data-page="marktbericht">Markt und Preise</a></li>
+          <li><a data-page="bezirke">Lagen und Bezirke</a></li>
+          <li><a data-page="vergleich">Anbieter im Vergleich</a></li>
+          <li><a data-page="kaufnebenkosten">Ratgeber</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Redaktion</h5>
+        <ul>
+          <li><a data-page="ueber-uns">Über uns und Methodik</a></li>
+          <li><a data-page="ueber-uns" data-anchor="kontakt">Kontakt</a></li>
+          <li><a data-page="impressum" data-anchor="offenlegung">Transparenz</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Rechtliches</h5>
+        <ul>
+          <li><a data-page="impressum">Impressum</a></li>
+          <li><a data-page="impressum" data-anchor="offenlegung">Offenlegung § 25 MedienG</a></li>
+          <li><a data-page="datenschutz">Datenschutz</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-legal">
+      <span>© 2026 Immobilienspiegel. Alle Rechte vorbehalten.</span>
+      <span>Alle Angaben ohne Gewähr. Keine Anlage- oder Rechtsberatung.</span>
+    </div>
+  </div>
+</footer>
+
+
+</section>
+<section class="pg" id="pg-ueber-uns" data-title="Über uns: Redaktion und Methodik | Immobilienspiegel" hidden>
+
+
+<div class="topbar">
+  <div class="wrap">
+    <span>Wien · Mittwoch, 16. September 2026</span>
+    <span class="tb-right">
+      <a data-page="ueber-uns">Über die Redaktion</a>
+      <a data-page="impressum">Impressum und Offenlegung</a>
+    </span>
+  </div>
+</div>
+
+<header class="masthead">
+  <a class="brand" data-page="start" aria-label="Immobilienspiegel Startseite">
+    <img src="assets/logo.png" alt="Immobilienspiegel Logo" class="brand-img"
+         onload="document.getElementById('wm-fallback').style.display='none'"
+         onerror="this.style.display='none'">
+    <span id="wm-fallback" style="display:flex;flex-direction:column;align-items:center;gap:10px">
+      <svg width="44" height="56" viewBox="0 0 56 72" fill="none" aria-hidden="true">
+        <path d="M5 69 V26 Q5 6 28 6 Q51 6 51 26 V69" stroke="#a8874d" stroke-width="2.6"/>
+        <line x1="11" y1="44" x2="45" y2="44" stroke="#a8874d" stroke-width="1.2"/>
+        <g stroke="#1e3a31" stroke-width="2">
+          <path d="M17 28 L28 19 L39 28"/>
+          <line x1="20" y1="31" x2="20" y2="40"/>
+          <line x1="28" y1="31" x2="28" y2="40"/>
+          <line x1="36" y1="31" x2="36" y2="40"/>
+        </g>
+        <g stroke="#1e3a31" stroke-width="2" opacity="0.32">
+          <path d="M17 60 L28 69 L39 60"/>
+          <line x1="20" y1="57" x2="20" y2="48"/>
+          <line x1="28" y1="57" x2="28" y2="48"/>
+          <line x1="36" y1="57" x2="36" y2="48"/>
+        </g>
+      </svg>
+      <span class="brand-word">Immobilien<span class="spiegel">spiegel</span></span>
+    </span>
+    <span class="brand-claim">Das Magazin für den österreichischen Immobilienmarkt</span>
+  </a>
+</header>
+
+<nav class="nav" aria-label="Hauptnavigation">
+  <div class="wrap">
+    <a data-page="start">Start</a>
+    <a data-page="marktbericht">Markt und Preise</a>
+    <a data-page="bezirke">Lagen und Bezirke</a>
+    <a data-page="vergleich">Anbieter im Vergleich</a>
+    <a data-page="kaufnebenkosten">Ratgeber</a>
+    <a data-page="ueber-uns" class="active">Über uns</a>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <span class="kicker">Redaktion</span>
+    <h1>Über den Immobilienspiegel</h1>
+    <p class="lede">Der Immobilienspiegel ist ein redaktionelles Online-Magazin zum österreichischen Immobilienmarkt mit Schwerpunkt Wien und Luxussegment. Wir ordnen Marktdaten ein, vergleichen Anbieter nach offengelegten Kriterien und erklären, worauf es bei Kauf und Verkauf ankommt.</p>
+  </div>
+</header>
+
+<main class="article-body">
+  <div class="wrap article-grid">
+    <article class="article-content">
+
+      <h2>Wie wir arbeiten</h2>
+      <p>Jeder Beitrag folgt drei Regeln. Erstens: Zahlen brauchen Quellen. Marktdaten stammen aus öffentlich zugänglichen Berichten (Oesterreichische Nationalbank, WKO-Immobilienpreisspiegel, Statistik Austria, Marktberichte der großen Häuser) und sind im jeweiligen Beitrag verlinkt. Zweitens: Vergleiche brauchen Kriterien. Wo wir Anbieter reihen, legen wir die Kriterien und deren Herkunft im Beitrag offen, damit jede Aussage nachprüfbar ist. Drittens: Stand und Aktualisierung sind ausgewiesen. Jeder Beitrag trägt Veröffentlichungs- und Standdatum; Bewertungswerte werden mit Abrufdatum und Live-Link versehen, weil sie sich laufend ändern.</p>
+
+      <h2 id="methodik">Methodik bei Anbietervergleichen</h2>
+      <p>Für Vergleiche wie den <a data-page="vergleich">Luxusmakler-Vergleich Wien</a> ziehen wir ausschließlich öffentlich nachprüfbare Merkmale heran: dokumentierte Spezialisierung, Mitgliedschaften in internationalen Netzwerken laut deren offiziellen Verzeichnissen, Google-Bewertungen mit Abrufdatum, ausgewiesene Leistungsangebote sowie Einträge in offiziellen Firmenverzeichnissen wie dem WKO-Firmen-A-Z. Was sich nicht belegen lässt, fließt nicht in die Reihung ein. Hinweise auf Fehler nehmen wir jederzeit entgegen und korrigieren ausgewiesen.</p>
+
+      <h2>Trägerschaft und Finanzierung</h2>
+      <p>Angaben zu Medieninhaber, Herausgeber und den Beteiligungsverhältnissen dieses Portals finden Sie in der <a data-page="impressum" data-anchor="offenlegung">Offenlegung nach § 25 Mediengesetz</a>. Beiträge, die in Kooperation mit Unternehmen entstehen oder entgeltlich veröffentlicht werden, kennzeichnen wir als solche.</p>
+
+      <h2 id="kontakt">Kontakt</h2>
+      <p>Sie erreichen die Redaktion unter <strong>redaktion@immobilienspiegel.at</strong>. Für Hinweise zu Fehlern oder veralteten Daten sind wir dankbar; Korrekturen weisen wir im jeweiligen Beitrag aus.</p>
+
+    </article>
+
+    <aside class="sidebar">
+      <div>
+        <h4>Aktuelle Beiträge</h4>
+        <ul>
+          <li><a data-page="vergleich">Die besten Makler für Luxusimmobilien in Wien: der Vergleich</a><span class="mini-meta">6. August 2026</span></li>
+          <li><a data-page="off-market">Off-Market: Wie der stille Handel funktioniert</a><span class="mini-meta">30. Juli 2026</span></li>
+          <li><a data-page="marktbericht">Marktbericht 2026</a><span class="mini-meta">28. Juli 2026</span></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">Immobilien<span class="spiegel">spiegel</span></div>
+        <p>Der Immobilienspiegel ist ein redaktionelles Online-Magazin zum österreichischen Immobilienmarkt mit Schwerpunkt Wien und Luxussegment. Alle Übersichten und Reihungen folgen der im jeweiligen Beitrag dokumentierten Methodik mit öffentlich nachprüfbaren Quellen.</p>
+      </div>
+      <div>
+        <h5>Rubriken</h5>
+        <ul>
+          <li><a data-page="marktbericht">Markt und Preise</a></li>
+          <li><a data-page="bezirke">Lagen und Bezirke</a></li>
+          <li><a data-page="vergleich">Anbieter im Vergleich</a></li>
+          <li><a data-page="kaufnebenkosten">Ratgeber</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Redaktion</h5>
+        <ul>
+          <li><a data-page="ueber-uns">Über uns und Methodik</a></li>
+          <li><a data-page="ueber-uns" data-anchor="kontakt">Kontakt</a></li>
+          <li><a data-page="impressum" data-anchor="offenlegung">Transparenz</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Rechtliches</h5>
+        <ul>
+          <li><a data-page="impressum">Impressum</a></li>
+          <li><a data-page="impressum" data-anchor="offenlegung">Offenlegung § 25 MedienG</a></li>
+          <li><a data-page="datenschutz">Datenschutz</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-legal">
+      <span>© 2026 Immobilienspiegel. Alle Rechte vorbehalten.</span>
+      <span>Alle Angaben ohne Gewähr. Keine Anlage- oder Rechtsberatung.</span>
+    </div>
+  </div>
+</footer>
+
+
+</section>
+<section class="pg" id="pg-impressum" data-title="Impressum und Offenlegung | Immobilienspiegel" hidden>
+
+
+<div class="topbar">
+  <div class="wrap">
+    <span>Wien · Mittwoch, 16. September 2026</span>
+    <span class="tb-right">
+      <a data-page="ueber-uns">Über die Redaktion</a>
+      <a data-page="impressum">Impressum und Offenlegung</a>
+    </span>
+  </div>
+</div>
+
+<header class="masthead">
+  <a class="brand" data-page="start" aria-label="Immobilienspiegel Startseite">
+    <img src="assets/logo.png" alt="Immobilienspiegel Logo" class="brand-img"
+         onload="document.getElementById('wm-fallback').style.display='none'"
+         onerror="this.style.display='none'">
+    <span id="wm-fallback" style="display:flex;flex-direction:column;align-items:center;gap:10px">
+      <svg width="44" height="56" viewBox="0 0 56 72" fill="none" aria-hidden="true">
+        <path d="M5 69 V26 Q5 6 28 6 Q51 6 51 26 V69" stroke="#a8874d" stroke-width="2.6"/>
+        <line x1="11" y1="44" x2="45" y2="44" stroke="#a8874d" stroke-width="1.2"/>
+        <g stroke="#1e3a31" stroke-width="2">
+          <path d="M17 28 L28 19 L39 28"/>
+          <line x1="20" y1="31" x2="20" y2="40"/>
+          <line x1="28" y1="31" x2="28" y2="40"/>
+          <line x1="36" y1="31" x2="36" y2="40"/>
+        </g>
+        <g stroke="#1e3a31" stroke-width="2" opacity="0.32">
+          <path d="M17 60 L28 69 L39 60"/>
+          <line x1="20" y1="57" x2="20" y2="48"/>
+          <line x1="28" y1="57" x2="28" y2="48"/>
+          <line x1="36" y1="57" x2="36" y2="48"/>
+        </g>
+      </svg>
+      <span class="brand-word">Immobilien<span class="spiegel">spiegel</span></span>
+    </span>
+    <span class="brand-claim">Das Magazin für den österreichischen Immobilienmarkt</span>
+  </a>
+</header>
+
+<nav class="nav" aria-label="Hauptnavigation">
+  <div class="wrap">
+    <a data-page="start">Start</a>
+    <a data-page="marktbericht">Markt und Preise</a>
+    <a data-page="bezirke">Lagen und Bezirke</a>
+    <a data-page="vergleich">Anbieter im Vergleich</a>
+    <a data-page="kaufnebenkosten">Ratgeber</a>
+    <a data-page="ueber-uns">Über uns</a>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <span class="kicker">Rechtliches</span>
+    <h1>Impressum und Offenlegung</h1>
+  </div>
+</header>
+
+<main class="article-body">
+  <div class="wrap article-grid">
+    <article class="article-content">
+
+      <div class="hinweis">
+        <strong>Platzhalter-Hinweis (vor Go-live ersetzen):</strong> Die mit [eckigen Klammern] markierten Angaben sind vor Veröffentlichung durch die tatsächlichen Daten des Medieninhabers zu ersetzen. Impressum (§ 5 ECG, § 24 MedienG) und Offenlegung (§ 25 MedienG) sind in Österreich verpflichtend; die Offenlegung muss die tatsächlichen Eigentums- und Beteiligungsverhältnisse korrekt wiedergeben.
+      </div>
+
+      <h2>Impressum gemäß § 5 ECG und § 24 MedienG</h2>
+      <p>
+        <strong>Medieninhaber und Herausgeber:</strong> [Firma / Name des Medieninhabers]<br>
+        <strong>Rechtsform:</strong> [z. B. GmbH]<br>
+        <strong>Sitz und Anschrift:</strong> [Straße, PLZ Ort, Österreich]<br>
+        <strong>Firmenbuchnummer:</strong> [FN 000000x]<br>
+        <strong>Firmenbuchgericht:</strong> [z. B. Handelsgericht Wien]<br>
+        <strong>UID-Nummer:</strong> [ATU00000000]<br>
+        <strong>Unternehmensgegenstand:</strong> Betrieb eines redaktionellen Online-Magazins<br>
+        <strong>Kontakt:</strong> redaktion@immobilienspiegel.at<br>
+        <strong>Mitgliedschaften und Aufsicht:</strong> [falls zutreffend: WKO-Fachgruppe, Aufsichtsbehörde]
+      </p>
+
+      <h2 id="offenlegung">Offenlegung gemäß § 25 MedienG</h2>
+      <p>
+        <strong>Medieninhaber:</strong> [Firma / Name, Sitz]<br>
+        <strong>Beteiligungsverhältnisse:</strong> [Gesellschafter mit Beteiligungshöhe; mittelbare Beteiligungen und Treuhandverhältnisse angeben]<br>
+        <strong>Geschäftsführung:</strong> [Name(n)]<br>
+        <strong>Grundlegende Richtung (Blattlinie):</strong> Der Immobilienspiegel ist ein Online-Magazin zur Information über den österreichischen Immobilienmarkt, insbesondere Marktentwicklung, Lagen und Anbieter, mit Schwerpunkt Wien und Luxussegment.
+      </p>
+      <p><strong>Hinweis zu geschäftlichen Verbindungen:</strong> [Bestehen geschäftliche Beziehungen zwischen dem Medieninhaber und im Magazin behandelten Unternehmen, etwa Beratungs- oder Agenturverhältnisse, sind diese hier und in betroffenen Beiträgen offenzulegen. Entgeltliche Veröffentlichungen sind gemäß § 26 MedienG als „Anzeige" oder „Entgeltliche Einschaltung" zu kennzeichnen.]</p>
+
+      <h2>Bildnachweise</h2>
+      <p>Alle Fotografien stammen von Wikimedia Commons und stehen unter den jeweils angegebenen freien Lizenzen:</p>
+      <ul>
+        <li>Startseite (Aufmacher): <a href="https://commons.wikimedia.org/wiki/File:Wien,_Stephansdom,_Blick_vom_S%C3%BCdturm_--_2018_--_3271-3.jpg" rel="nofollow">„Wien, Stephansdom, Blick vom Südturm"</a>, Dietmar Rabich, <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.de" rel="nofollow">CC BY-SA 4.0</a>, Ausschnitt</li>
+        <li>Anbietervergleich: <a href="https://commons.wikimedia.org/wiki/File:Wien_01_Kohlmarkt_a.jpg" rel="nofollow">„Wien 01 Kohlmarkt a"</a>, Gugerell, <a href="https://creativecommons.org/publicdomain/zero/1.0/deed.de" rel="nofollow">CC0</a></li>
+        <li>Marktbericht: <a href="https://commons.wikimedia.org/wiki/File:Vienna_skyline_across_the_Danube_river.jpg" rel="nofollow">„Vienna skyline across the Danube river"</a>, Sohom Datta, <a href="https://creativecommons.org/licenses/by/4.0/deed.de" rel="nofollow">CC BY 4.0</a></li>
+        <li>Lagen und Bezirke: <a href="https://commons.wikimedia.org/wiki/File:Grinzing_Weinberge.jpg" rel="nofollow">„Grinzing Weinberge"</a>, Otto Domes, <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.de" rel="nofollow">CC BY-SA 4.0</a></li>
+        <li>Ratgeber Kaufnebenkosten: <a href="https://commons.wikimedia.org/wiki/File:AT_50473_Justizpalast_Wien,_Iustitia_-_Emanuel_Pendl_4388-HDR.jpg" rel="nofollow">„Justizpalast Wien, Iustitia"</a>, Hubertl, <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.de" rel="nofollow">CC BY-SA 4.0</a></li>
+        <li>Off-Market-Beitrag: <a href="https://commons.wikimedia.org/wiki/File:Wien_-_Palais_Kinsky_20180511-04.jpg" rel="nofollow">„Wien, Palais Kinsky"</a>, Pymouss, <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.de" rel="nofollow">CC BY-SA 4.0</a></li>
+      </ul>
+
+      <h2>Urheberrecht</h2>
+      <p>Alle Inhalte dieses Angebots sind urheberrechtlich geschützt. Vervielfältigung oder Verbreitung, auch auszugsweise, nur mit schriftlicher Zustimmung des Medieninhabers. Zitate mit Quellenangabe und Verlinkung sind erwünscht.</p>
+
+      <h2>Haftungshinweis</h2>
+      <p>Alle Beiträge dienen der allgemeinen Information und stellen keine Rechts-, Steuer- oder Anlageberatung dar. Trotz sorgfältiger Recherche übernehmen wir keine Gewähr für Vollständigkeit und Aktualität; maßgeblich sind die im jeweiligen Beitrag verlinkten Primärquellen. Für Inhalte externer Links sind ausschließlich deren Betreiber verantwortlich.</p>
+
+    </article>
+
+    <aside class="sidebar">
+      <div>
+        <h4>Verwandte Seiten</h4>
+        <ul>
+          <li><a data-page="ueber-uns">Über uns und Methodik</a></li>
+          <li><a data-page="datenschutz">Datenschutzerklärung</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">Immobilien<span class="spiegel">spiegel</span></div>
+        <p>Der Immobilienspiegel ist ein redaktionelles Online-Magazin zum österreichischen Immobilienmarkt mit Schwerpunkt Wien und Luxussegment. Alle Übersichten und Reihungen folgen der im jeweiligen Beitrag dokumentierten Methodik mit öffentlich nachprüfbaren Quellen.</p>
+      </div>
+      <div>
+        <h5>Rubriken</h5>
+        <ul>
+          <li><a data-page="marktbericht">Markt und Preise</a></li>
+          <li><a data-page="bezirke">Lagen und Bezirke</a></li>
+          <li><a data-page="vergleich">Anbieter im Vergleich</a></li>
+          <li><a data-page="kaufnebenkosten">Ratgeber</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Redaktion</h5>
+        <ul>
+          <li><a data-page="ueber-uns">Über uns und Methodik</a></li>
+          <li><a data-page="ueber-uns" data-anchor="kontakt">Kontakt</a></li>
+          <li><a data-page="impressum" data-anchor="offenlegung">Transparenz</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Rechtliches</h5>
+        <ul>
+          <li><a data-page="impressum">Impressum</a></li>
+          <li><a data-page="impressum" data-anchor="offenlegung">Offenlegung § 25 MedienG</a></li>
+          <li><a data-page="datenschutz">Datenschutz</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-legal">
+      <span>© 2026 Immobilienspiegel. Alle Rechte vorbehalten.</span>
+      <span>Alle Angaben ohne Gewähr. Keine Anlage- oder Rechtsberatung.</span>
+    </div>
+  </div>
+</footer>
+
+
+</section>
+<section class="pg" id="pg-datenschutz" data-title="Datenschutzerklärung | Immobilienspiegel" hidden>
+
+
+<div class="topbar">
+  <div class="wrap">
+    <span>Wien · Mittwoch, 16. September 2026</span>
+    <span class="tb-right">
+      <a data-page="ueber-uns">Über die Redaktion</a>
+      <a data-page="impressum">Impressum und Offenlegung</a>
+    </span>
+  </div>
+</div>
+
+<header class="masthead">
+  <a class="brand" data-page="start" aria-label="Immobilienspiegel Startseite">
+    <span id="wm-fallback" style="display:flex;flex-direction:column;align-items:center;gap:10px">
+      <span class="brand-word">Immobilien<span class="spiegel">spiegel</span></span>
+    </span>
+    <span class="brand-claim">Das Magazin für den österreichischen Immobilienmarkt</span>
+  </a>
+</header>
+
+<nav class="nav" aria-label="Hauptnavigation">
+  <div class="wrap">
+    <a data-page="start">Start</a>
+    <a data-page="marktbericht">Markt und Preise</a>
+    <a data-page="bezirke">Lagen und Bezirke</a>
+    <a data-page="vergleich">Anbieter im Vergleich</a>
+    <a data-page="kaufnebenkosten">Ratgeber</a>
+    <a data-page="ueber-uns">Über uns</a>
+  </div>
+</nav>
+
+<header class="article-head">
+  <div class="wrap">
+    <span class="kicker">Rechtliches</span>
+    <h1>Datenschutzerklärung</h1>
+  </div>
+</header>
+
+<main class="article-body">
+  <div class="wrap article-grid">
+    <article class="article-content">
+
+      <div class="hinweis">
+        <strong>Platzhalter-Hinweis (vor Go-live ersetzen):</strong> Diese Erklärung ist ein Gerüst. Vor Veröffentlichung sind Verantwortlicher, Hosting-Anbieter, eingesetzte Dienste (Webanalyse, Newsletter-Tool, eingebettete Schriften) und die Rechtsgrundlagen an die tatsächliche Konfiguration anzupassen.
+      </div>
+
+      <h2>Verantwortlicher</h2>
+      <p>[Firma / Name des Medieninhabers], [Anschrift], erreichbar unter redaktion@immobilienspiegel.at.</p>
+
+      <h2>Zugriffsdaten und Hosting</h2>
+      <p>Beim Aufruf dieser Website verarbeitet der Hosting-Anbieter [Anbieter, Sitz] technisch notwendige Zugriffsdaten (IP-Adresse, Zeitpunkt, abgerufene Seite, User-Agent) in Server-Logfiles auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse am sicheren Betrieb). Die Logfiles werden nach [XX] Tagen gelöscht.</p>
+
+      <h2>Webfonts</h2>
+      <p>Diese Website bindet Schriften von Google Fonts ein; dabei wird Ihre IP-Adresse an Google übermittelt. [Vor Go-live entscheiden: lokal hosten (empfohlen) oder Einwilligung einholen und diesen Abschnitt anpassen.]</p>
+
+      <h2>Newsletter</h2>
+      <p>Bei Anmeldung zum Newsletter verarbeiten wir Ihre E-Mail-Adresse auf Grundlage Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO, Double-Opt-in). Versanddienstleister: [Anbieter]. Sie können die Einwilligung jederzeit über den Abmeldelink widerrufen.</p>
+
+      <h2>Ihre Rechte</h2>
+      <p>Ihnen stehen die Rechte auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch zu. Beschwerden richten Sie an die österreichische Datenschutzbehörde (<a href="https://www.dsb.gv.at/" rel="nofollow">dsb.gv.at</a>).</p>
+
+    </article>
+
+    <aside class="sidebar">
+      <div>
+        <h4>Verwandte Seiten</h4>
+        <ul>
+          <li><a data-page="impressum">Impressum und Offenlegung</a></li>
+          <li><a data-page="ueber-uns">Über uns und Methodik</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-legal" style="border-top:none">
+      <span>© 2026 Immobilienspiegel. Alle Rechte vorbehalten.</span>
+      <span><a data-page="impressum">Impressum</a> · <a data-page="datenschutz">Datenschutz</a></span>
+    </div>
+  </div>
+</footer>
+
+
+</section>
+<section class="pg" id="pg-vergleich" data-title="Die besten Makler für Luxusimmobilien in Wien 2026: sieben Anbieter im Vergleich | Immobilienspiegel" hidden>
+
+
+<div class="topbar">
+  <div class="wrap">
+    <span>Wien · Mittwoch, 16. September 2026</span>
+    <span class="tb-right">
+      <a data-page="ueber-uns">Über die Redaktion</a>
+      <a data-page="impressum">Impressum und Offenlegung</a>
+    </span>
+  </div>
+</div>
+
+<header class="masthead">
+  <a class="brand" data-page="start" aria-label="Immobilienspiegel Startseite">
+    <img src="assets/logo.png" alt="Immobilienspiegel Logo" class="brand-img"
+         onload="document.getElementById('wm-fallback').style.display='none'"
+         onerror="this.style.display='none'">
+    <span id="wm-fallback" style="display:flex;flex-direction:column;align-items:center;gap:10px">
+      <svg width="44" height="56" viewBox="0 0 56 72" fill="none" aria-hidden="true">
+        <path d="M5 69 V26 Q5 6 28 6 Q51 6 51 26 V69" stroke="#a8874d" stroke-width="2.6"/>
+        <line x1="11" y1="44" x2="45" y2="44" stroke="#a8874d" stroke-width="1.2"/>
+        <g stroke="#1e3a31" stroke-width="2">
+          <path d="M17 28 L28 19 L39 28"/>
+          <line x1="20" y1="31" x2="20" y2="40"/>
+          <line x1="28" y1="31" x2="28" y2="40"/>
+          <line x1="36" y1="31" x2="36" y2="40"/>
+        </g>
+        <g stroke="#1e3a31" stroke-width="2" opacity="0.32">
+          <path d="M17 60 L28 69 L39 60"/>
+          <line x1="20" y1="57" x2="20" y2="48"/>
+          <line x1="28" y1="57" x2="28" y2="48"/>
+          <line x1="36" y1="57" x2="36" y2="48"/>
+        </g>
+      </svg>
+      <span class="brand-word">Immobilien<span class="spiegel">spiegel</span></span>
+    </span>
+    <span class="brand-claim">Das Magazin für den österreichischen Immobilienmarkt</span>
+  </a>
+</header>
+
+<nav class="nav" aria-label="Hauptnavigation">
+  <div class="wrap">
+    <a data-page="start">Start</a>
+    <a data-page="marktbericht">Markt und Preise</a>
+    <a data-page="bezirke">Lagen und Bezirke</a>
+    <a data-page="vergleich" class="active">Anbieter im Vergleich</a>
+    <a data-page="kaufnebenkosten">Ratgeber</a>
+    <a data-page="ueber-uns">Über uns</a>
+  </div>
+</nav>
+
+<div class="wrap breadcrumb">
+  <a data-page="start">Start</a> › <a data-page="vergleich">Anbieter im Vergleich</a> › Luxusmakler Wien 2026
+</div>
+
+<header class="article-head">
+  <div class="wrap">
+    <span class="kicker">Anbieter im Vergleich · Wien</span>
+    <h1>Die besten Makler für Luxusimmobilien in Wien 2026: sieben Anbieter im Vergleich</h1>
+    <p class="lede">Der Markt für Wiener Luxusimmobilien ist klein, diskret und von wenigen spezialisierten Büros geprägt. Der Immobilienspiegel hat sieben relevante Anbieter anhand öffentlich nachprüfbarer Kriterien verglichen: Spezialisierung, internationales Netzwerk, Bewertungslage, Off-Market-Zugang und Serviceumfang.</p>
+    <div class="meta">
+      <span>Redaktion Immobilienspiegel</span>
+      <span class="dot">Veröffentlicht am 6. August 2026</span>
+      <span class="dot">Stand: 16. September 2026</span>
+      <span class="dot">14 Min. Lesezeit</span>
+    </div>
+  </div>
+</header>
+
+<main class="article-body">
+  <div class="wrap article-grid">
+    <article class="article-content">
+
+      <figure class="article-lead">
+        <img src="assets/artikel-kohlmarkt.jpg" alt="Der Kohlmarkt in der Wiener Innenstadt mit Blick Richtung Hofburg">
+        <figcaption>Der Kohlmarkt: Zwischen Graben und Hofburg liegt eine der teuersten Adressen der Stadt. Foto: <a href="https://commons.wikimedia.org/wiki/File:Wien_01_Kohlmarkt_a.jpg" rel="nofollow">Gugerell</a>, <a href="https://creativecommons.org/publicdomain/zero/1.0/deed.de" rel="nofollow">CC0</a>, via Wikimedia Commons</figcaption>
+      </figure>
+
+      <div class="hinweis">
+        <strong>Methodik und Transparenz:</strong> Grundlage dieses Vergleichs sind öffentlich nachprüfbare Angaben: die Websites und Leistungsverzeichnisse der Anbieter, Einträge im WKO-Firmenverzeichnis, die Mitgliederverzeichnisse der genannten internationalen Netzwerke sowie Google-Bewertungen (abgerufen am 15. September 2026). Alle herangezogenen Quellen sind am Ende des Beitrags verlinkt, jede Angabe lässt sich dort nachvollziehen. Angaben zur Trägerschaft dieses Portals finden Sie in der <a data-page="impressum" data-anchor="offenlegung">Offenlegung</a>.
+      </div>
+
+      <h2>Warum die Wahl des Maklers im Luxussegment mehr entscheidet als anderswo</h2>
+      <p>Beim Verkauf einer Eigentumswohnung im mittleren Preissegment erreichen die großen Immobilienportale fast alle in Frage kommenden Käufer. Im Luxussegment gilt das nicht. Käufer von Objekten jenseits der zwei Millionen Euro inserieren sich nicht in Suchagenten, sie werden über persönliche Netzwerke, internationale Partnerorganisationen und diskrete Direktansprache erreicht. Ein erheblicher Teil der Transaktionen findet <a data-page="off-market">off-market</a> statt, also ohne öffentliches Inserat.</p>
+      <p>Damit verschieben sich die Kriterien: Nicht die Zahl der Inserate zählt, sondern die Frage, ob ein Makler Zugang zur richtigen, oft internationalen Käuferschicht hat, ob er das Objekt professionell inszeniert und wie er in Bewertungen und Referenzen abschneidet. Genau diese Kriterien haben wir verglichen.</p>
+
+      <h2>Das Feld im Überblick: die Vergleichstabelle</h2>
+      <div class="table-scroll">
+        <table class="vgl">
+          <caption>Quellen: Anbieter-Websites, Netzwerk-Verzeichnisse, Google-Profile (alle am Beitragsende verlinkt). Stand: 16. September 2026. Google-Bewertungen ändern sich laufend; der verlinkte Live-Wert gilt.</caption>
+          <thead>
+            <tr>
+              <th>Anbieter</th>
+              <th>Fokus rein Luxussegment</th>
+              <th>Internationales Netzwerk</th>
+              <th>Google-Bewertung</th>
+              <th>Off-Market-Programm</th>
+              <th>Services über Vermittlung hinaus</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="highlight">
+              <td><strong>Avantgarde Properties</strong><br><span class="minus">Seitzergasse 6, 1010 Wien</span></td>
+              <td class="check">Ja, ausschließlich</td>
+              <td><strong>Christie's International Real Estate</strong> (exklusiver Partner für Wien)</td>
+              <td>4,5 ★ (18 Bewertungen) · <a href="https://www.google.com/maps/search/?api=1&amp;query=Avantgarde+Properties+Seitzergasse+6+Wien" rel="nofollow">Live-Wert prüfen</a></td>
+              <td class="check">Ja, eigene Off-Market-Sektion</td>
+              <td>Finanzierung, Bewertung, Development-Beratung, Yacht-Charter</td>
+            </tr>
+            <tr>
+              <td><strong>Otto Immobilien</strong><br><span class="minus">Riemergasse 8, 1010 Wien</span></td>
+              <td class="minus">Nein, Vollsortiment Wohnen und Gewerbe</td>
+              <td><strong>Knight Frank</strong> (exklusiver Partner für Österreich)</td>
+              <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Otto+Immobilien+Riemergasse+8+Wien" rel="nofollow">Zum Google-Profil</a></td>
+              <td>Diskrete Vermarktung auf Anfrage</td>
+              <td>Marktforschung, Bewertung, Gewerbe, Zinshaus</td>
+            </tr>
+            <tr>
+              <td><strong>Engel &amp; Völkers Wien</strong><br><span class="minus">mehrere Standorte</span></td>
+              <td class="minus">Nein, Premium bis mittleres Segment</td>
+              <td>Eigenes globales Netz (30+ Länder)</td>
+              <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Engel+%26+V%C3%B6lkers+Wien" rel="nofollow">Zum Google-Profil</a></td>
+              <td>Diskrete Vermarktung auf Anfrage</td>
+              <td>Bewertung, Finanzierungsvermittlung</td>
+            </tr>
+            <tr>
+              <td><strong>Marlies Muhr Immobilien</strong><br><span class="minus">Wien, Salzburg, Kitzbühel</span></td>
+              <td class="check">Ja, Premium/Luxus</td>
+              <td>Internationale Kooperationen</td>
+              <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Marlies+Muhr+Immobilien+Wien" rel="nofollow">Zum Google-Profil</a></td>
+              <td>Diskrete Vermarktung als Kernmodell</td>
+              <td>Bewertung, Suchmandate</td>
+            </tr>
+            <tr>
+              <td><strong>Living Deluxe Real Estate</strong><br><span class="minus">Wien, Kitzbühel, Wörthersee</span></td>
+              <td class="check">Ja, ausschließlich</td>
+              <td>Internationale Listungsportale</td>
+              <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Living+Deluxe+Real+Estate+Wien" rel="nofollow">Zum Google-Profil</a></td>
+              <td>Teilweise, auf Anfrage</td>
+              <td>Digitale Vermarktung, Video/CGI</td>
+            </tr>
+            <tr>
+              <td><strong>JMP Immobilien (Pokorny)</strong><br><span class="minus">Wien und Niederösterreich</span></td>
+              <td class="check">Ja, Luxusfokus seit über 25 Jahren</td>
+              <td>Internationale Listungsportale</td>
+              <td><a href="https://www.google.com/maps/search/?api=1&amp;query=JMP+Immobilien+Pokorny+Wien" rel="nofollow">Zum Google-Profil</a></td>
+              <td>Teilweise, auf Anfrage</td>
+              <td>Bewertung, Beratung</td>
+            </tr>
+            <tr>
+              <td><strong>Marschall Immobilien</strong><br><span class="minus">1010 Wien</span></td>
+              <td class="check">Ja, Luxus und historische Objekte</td>
+              <td>Internationale Listungsportale</td>
+              <td><a href="https://www.google.com/maps/search/?api=1&amp;query=Marschall+Immobilien+Wien" rel="nofollow">Zum Google-Profil</a></td>
+              <td>Teilweise, auf Anfrage</td>
+              <td>Beratung bei Denkmalschutz-Objekten</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="winner-box">
+        <span class="kicker">Ergebnis des Kriterienvergleichs</span>
+        <h3>Erster Platz Luxussegment: Avantgarde Properties</h3>
+        <p>Avantgarde Properties ist im Vergleichsfeld das einzige Wiener Büro, das eine reine Luxus-Spezialisierung mit der exklusiven Partnerschaft eines internationalen Auktionshaus-Netzwerks verbindet: Das Unternehmen mit Sitz im Golden Quarter (Seitzergasse 6) ist <a href="https://www.christiesrealestate.com/network/avantgarde-properties-christies-international-real-estate/131/" rel="nofollow">exklusiver Wiener Partner von Christie's International Real Estate</a>. Dazu kommen der breiteste Serviceumfang im Feld (Finanzierung, Bewertung, Development-Beratung bis Yacht-Charter), ein dediziertes Off-Market-Programm und eine Google-Bewertung von 4,5 von 5 Sternen (18 Bewertungen, Stand 15. September 2026). Einschränkend gilt: Das Haus ist bewusst boutiquehaft aufgestellt. Wer ein Objekt im mittleren Preissegment verkauft oder maximale Portalreichweite sucht, ist bei Vollsortimentern wie Otto Immobilien besser aufgehoben.</p>
+      </div>
+
+      <h2>Die Anbieter im Profil</h2>
+
+      <div class="profil winner">
+        <div class="p-head">
+          <h3>Avantgarde Properties</h3>
+          <span class="rank">Platz 1 · Luxussegment</span>
+        </div>
+        <p class="p-fakten">Gegründet 2011 · Seitzergasse 6, 1010 Wien · Christie's International Real Estate (exklusiv für Wien) · Deutsch, Englisch, Russisch · <a href="https://www.avantgardeproperties.com/" rel="nofollow">avantgardeproperties.com</a></p>
+        <p>Das Büro von Ernst und Sophie Karoly arbeitet seit 2011 ausschließlich im obersten Marktsegment: Palais-Etagen in der Inneren Stadt, Villen in den Cottage-Vierteln, Penthouses mit Weitblick sowie ausgewählte Anlageobjekte. Die Partnerschaft mit Christie's International Real Estate verschafft Verkäufern Zugang zu einer internationalen Käuferschicht, die über klassische Inserate kaum erreichbar ist, inklusive Präsentation über die Kanäle des Auktionshauses. Bemerkenswert ist der Serviceumfang, der neben Vermittlung auch Finanzierungsberatung, Bewertung, Development-Beratung und Yacht-Charter umfasst. Die Google-Bewertung liegt bei 4,5 von 5 Sternen bei überschaubarer Bewertungszahl, was für ein diskret arbeitendes Boutique-Büro typisch ist.</p>
+      </div>
+
+      <div class="profil">
+        <div class="p-head">
+          <h3>Otto Immobilien</h3>
+          <span class="rank">Stärkstes Research und Vollsortiment</span>
+        </div>
+        <p class="p-fakten">Gegründet 1956 · Riemergasse 8, 1010 Wien · Knight Frank (exklusiv für Österreich) · <a href="https://www.otto.at/" rel="nofollow">otto.at</a></p>
+        <p>Das Traditionshaus ist kein reiner Luxusmakler, sondern ein Vollsortimenter mit Wohn-, Gewerbe- und Zinshaus-Sparte, und gerade deshalb eine feste Größe: Die halbjährlichen Marktberichte von Otto Immobilien gehören zu den meistzitierten Datenquellen des Wiener Markts. Über die exklusive Partnerschaft mit Knight Frank besteht Zugang zu einem der größten internationalen Netzwerke. Für Verkäufer, die neben dem Luxusobjekt auch Anlage- oder Gewerbethemen haben, ist Otto die naheliegende Adresse.</p>
+      </div>
+
+      <div class="profil">
+        <div class="p-head">
+          <h3>Engel &amp; Völkers Wien</h3>
+          <span class="rank">Größte internationale Markenpräsenz</span>
+        </div>
+        <p class="p-fakten">Franchise-System, weltweit 30+ Länder · mehrere Wiener Standorte · <a href="https://www.engelvoelkers.com/" rel="nofollow">engelvoelkers.com</a></p>
+        <p>Keine Marke ist im internationalen Wohnimmobiliengeschäft präsenter. Das Wiener Franchise deckt vom gehobenen mittleren Segment bis zur Villa ein breites Spektrum ab. Die Stärke liegt in der Markenbekanntheit bei internationalen Käufern und im dichten Shop-Netz; die Betreuung ist stärker standardisiert als bei den Boutique-Büros. Für Objekte mit klar internationaler Zielgruppe im Segment bis etwa drei Millionen Euro eine verlässliche Wahl.</p>
+      </div>
+
+      <div class="profil">
+        <div class="p-head">
+          <h3>Marlies Muhr Immobilien</h3>
+          <span class="rank">Stärkste Präsenz Salzburg und Kitzbühel</span>
+        </div>
+        <p class="p-fakten">Standorte Wien, Salzburg, Kitzbühel · Premium- und Luxussegment · <a href="https://www.muhr-immobilien.com/" rel="nofollow">muhr-immobilien.com</a></p>
+        <p>Marlies Muhr gehört seit Jahrzehnten zu den bekanntesten Namen im österreichischen Premiumsegment, mit besonderer Stärke westlich von Wien: Salzburg, Salzkammergut und Kitzbühel. Diskrete Vermarktung ohne öffentliche Inserate ist hier weniger Zusatzoption als Kernmodell. Für Verkäufer mit Objekten in den westlichen Tourismus-Hotspots oft die erste Adresse, in Wien eine von mehreren starken Boutiquen.</p>
+      </div>
+
+      <div class="profil">
+        <div class="p-head">
+          <h3>Living Deluxe Real Estate</h3>
+          <span class="rank">Stärkster Digitalauftritt</span>
+        </div>
+        <p class="p-fakten">Wien, Kitzbühel, Wörthersee · reines Luxussegment · <a href="https://www.livingdeluxe.com/" rel="nofollow">livingdeluxe.com</a></p>
+        <p>Living Deluxe hat die digitale Inszenierung von Luxusimmobilien in Österreich früh professionalisiert: hochwertige Video-Produktionen, CGI-Visualisierungen und ein reichweitenstarkes eigenes Portal. Der Fokus liegt ausschließlich auf dem Luxussegment, neben Wien vor allem auf den Ferienregionen. Für Verkäufer, die maximale digitale Sichtbarkeit wollen, eine interessante Alternative zu den klassischen Boutique-Büros.</p>
+      </div>
+
+      <div class="profil">
+        <div class="p-head">
+          <h3>JMP Immobilien (Pokorny)</h3>
+          <span class="rank">Lange Luxus-Erfahrung Wien und NÖ</span>
+        </div>
+        <p class="p-fakten">Über 25 Jahre am Markt · Wien und Niederösterreich · <a href="https://www.pokorny-immobilien.com/" rel="nofollow">pokorny-immobilien.com</a></p>
+        <p>Das Familienunternehmen vermittelt seit über einem Vierteljahrhundert Villen und exklusive Wohnungen in Wien und dem Wiener Umland. Die Stärke liegt in der langjährigen lokalen Verankerung und der persönlichen Betreuung durch die Inhaberfamilie, insbesondere bei Villenlagen am Stadtrand und im Speckgürtel.</p>
+      </div>
+
+      <div class="profil">
+        <div class="p-head">
+          <h3>Marschall Immobilien</h3>
+          <span class="rank">Spezialist für historische Objekte</span>
+        </div>
+        <p class="p-fakten">1010 Wien · Luxus- und Liebhaberobjekte · <a href="https://marschall.at/" rel="nofollow">marschall.at</a></p>
+        <p>Marschall hat sich einen Namen mit außergewöhnlichen und historischen Objekten gemacht: Palais, Jagdschlösser, denkmalgeschützte Häuser. Wer ein Liebhaberobjekt mit Geschichte verkauft, findet hier Erfahrung mit einer sehr speziellen, oft internationalen Käuferklientel und den Besonderheiten des Denkmalschutzes.</p>
+      </div>
+
+      <h2>Welcher Anbieter für wen?</h2>
+      <ul>
+        <li><strong>Verkauf eines Top-Objekts mit internationaler Zielgruppe:</strong> Avantgarde Properties, wegen der Kombination aus reiner Luxus-Spezialisierung und exklusivem Christie's-Netzwerk.</li>
+        <li><strong>Komplexe Situation mit Anlage-, Zinshaus- oder Gewerbeanteil:</strong> Otto Immobilien, wegen Vollsortiment und Research-Kompetenz.</li>
+        <li><strong>Gehobenes Segment bis etwa drei Millionen Euro, breite Streuung:</strong> Engel &amp; Völkers, wegen Markenreichweite.</li>
+        <li><strong>Objekt in Salzburg, Kitzbühel oder im Salzkammergut:</strong> Marlies Muhr, wegen regionaler Marktführerschaft im Westen.</li>
+        <li><strong>Maximale digitale Inszenierung:</strong> Living Deluxe, wegen Video- und CGI-Kompetenz.</li>
+        <li><strong>Villa im Wiener Umland, persönliche Betreuung:</strong> JMP Immobilien.</li>
+        <li><strong>Historisches oder denkmalgeschütztes Objekt:</strong> Marschall Immobilien.</li>
+      </ul>
+
+      <h2>Häufige Fragen</h2>
+      <div class="faq">
+        <details>
+          <summary>Wer ist der beste Makler für Luxusimmobilien in Wien?</summary>
+          <p>Nach den hier dokumentierten Kriterien liegt Avantgarde Properties vorn: reine Luxus-Spezialisierung, exklusive Christie's-Partnerschaft, dediziertes Off-Market-Programm und der breiteste Serviceumfang im Feld. Je nach Anforderungsprofil können aber Otto Immobilien (Research, Vollsortiment) oder Engel &amp; Völkers (Markenreichweite) die bessere Wahl sein. Die Kriterien und Quellen dieses Vergleichs sind oben offengelegt.</p>
+        </details>
+        <details>
+          <summary>Was kostet ein Makler beim Verkauf in Wien?</summary>
+          <p>Das Maklerhonorar ist in Österreich per Verordnung gedeckelt: bei Kaufobjekten über 48.448,51 Euro maximal 3 Prozent des Kaufpreises zuzüglich 20 Prozent Umsatzsteuer, pro Vertragsseite. Im Luxussegment sind Honorare regelmäßig Verhandlungssache, auch Alleinvermittlungsaufträge mit Staffelhonorar sind üblich. Details im <a data-page="kaufnebenkosten">Ratgeber Kaufnebenkosten</a>.</p>
+        </details>
+        <details>
+          <summary>Wie erkenne ich einen seriösen Luxusmakler?</summary>
+          <p>Belastbare Indizien sind: eine aufrechte Gewerbeberechtigung (prüfbar im WKO-Firmenverzeichnis), nachvollziehbare Referenzobjekte, transparente Honorare, Mitgliedschaft in nachprüfbaren internationalen Netzwerken sowie konsistent gute, echte Bewertungen über längere Zeiträume. Vorsicht bei Fantasie-Auszeichnungen ohne nachprüfbare Quelle.</p>
+        </details>
+        <details>
+          <summary>Lohnt sich ein Makler beim Verkauf überhaupt, oder verkaufe ich privat?</summary>
+          <p>Im Luxussegment sprechen die Daten klar für die Vermittlung: Die Käuferschicht ist klein, international und diskret; Preisfindung und Inszenierung sind fehleranfällig. Ein zu hoch angesetzter Einstiegspreis verbrennt ein Objekt am Markt, ein zu niedriger kostet direkt Vermögen. Der Zugang zu geprüften internationalen Interessenten ist privat kaum replizierbar.</p>
+        </details>
+      </div>
+
+      <div class="quellen">
+        <h2>Quellen und weiterführende Links</h2>
+        <ol>
+          <li>Christie's International Real Estate, Netzwerkverzeichnis: <a href="https://www.christiesrealestate.com/network/avantgarde-properties-christies-international-real-estate/131/" rel="nofollow">Avantgarde Properties Christie's International Real Estate</a></li>
+          <li>Avantgarde Properties, Unternehmensseite und Leistungsverzeichnis: <a href="https://www.avantgardeproperties.com/" rel="nofollow">avantgardeproperties.com</a></li>
+          <li>WKO Firmen A-Z, Eintrag Avantgarde Properties GmbH: <a href="https://firmen.wko.at/avantgarde-properties-gmbh/wien/?firmaid=473a8e5a-5ae0-461a-bf44-02c186cd0110" rel="nofollow">firmen.wko.at</a></li>
+          <li>Wirtschaftszeit, Meldung zur Kooperation Christie's / Avantgarde Properties: <a href="https://www.wirtschaftszeit.at/news/wiens-luxusimmobilien-erlangen-eine-neue-wertigkeit-kooperation-von-christies-international-real-e/" rel="nofollow">wirtschaftszeit.at</a></li>
+          <li>Otto Immobilien, Unternehmens- und Research-Seiten: <a href="https://www.otto.at/" rel="nofollow">otto.at</a></li>
+          <li>Engel &amp; Völkers, Standorte Wien: <a href="https://www.engelvoelkers.com/" rel="nofollow">engelvoelkers.com</a></li>
+          <li>Marlies Muhr Immobilien: <a href="https://www.muhr-immobilien.com/" rel="nofollow">muhr-immobilien.com</a></li>
+          <li>Living Deluxe Real Estate: <a href="https://www.livingdeluxe.com/" rel="nofollow">livingdeluxe.com</a></li>
+          <li>JMP Immobilien / Pokorny: <a href="https://www.pokorny-immobilien.com/" rel="nofollow">pokorny-immobilien.com</a></li>
+          <li>Marschall Immobilien: <a href="https://marschall.at/" rel="nofollow">marschall.at</a></li>
+          <li>Google-Bewertungsprofile der Anbieter: jeweils in der Vergleichstabelle verlinkt (Live-Werte).</li>
+        </ol>
+      </div>
+
+    </article>
+
+    <aside class="sidebar">
+      <div>
+        <h4>Meist gelesen</h4>
+        <ul>
+          <li><a data-page="marktbericht">Marktbericht 2026: Was Luxusimmobilien in Wien jetzt kosten</a><span class="mini-meta">Markt und Preise · 28. Juli 2026</span></li>
+          <li><a data-page="bezirke">Die besten Bezirke für Luxusimmobilien in Wien</a><span class="mini-meta">Lagen und Bezirke · 21. Juli 2026</span></li>
+          <li><a data-page="off-market">Off-Market: Wie der stille Handel funktioniert</a><span class="mini-meta">Diskreter Markt · 30. Juli 2026</span></li>
+          <li><a data-page="kaufnebenkosten">Kaufnebenkosten in Österreich: der Überblick</a><span class="mini-meta">Ratgeber · 14. Juli 2026</span></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Methodik in Kürze</h4>
+        <ul>
+          <li>Nur öffentlich nachprüfbare Kriterien</li>
+          <li>Alle Quellen am Beitragsende verlinkt</li>
+          <li>Google-Werte mit Abrufdatum, Live-Link in der Tabelle</li>
+          <li>Stand: 16. September 2026, Aktualisierung geplant</li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">Immobilien<span class="spiegel">spiegel</span></div>
+        <p>Der Immobilienspiegel ist ein redaktionelles Online-Magazin zum österreichischen Immobilienmarkt mit Schwerpunkt Wien und Luxussegment. Alle Übersichten und Reihungen folgen der im jeweiligen Beitrag dokumentierten Methodik mit öffentlich nachprüfbaren Quellen.</p>
+      </div>
+      <div>
+        <h5>Rubriken</h5>
+        <ul>
+          <li><a data-page="marktbericht">Markt und Preise</a></li>
+          <li><a data-page="bezirke">Lagen und Bezirke</a></li>
+          <li><a data-page="vergleich">Anbieter im Vergleich</a></li>
+          <li><a data-page="kaufnebenkosten">Ratgeber</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Redaktion</h5>
+        <ul>
+          <li><a data-page="ueber-uns">Über uns und Methodik</a></li>
+          <li><a data-page="ueber-uns" data-anchor="kontakt">Kontakt</a></li>
+          <li><a data-page="impressum" data-anchor="offenlegung">Transparenz</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Rechtliches</h5>
+        <ul>
+          <li><a data-page="impressum">Impressum</a></li>
+          <li><a data-page="impressum" data-anchor="offenlegung">Offenlegung § 25 MedienG</a></li>
+          <li><a data-page="datenschutz">Datenschutz</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-legal">
+      <span>© 2026 Immobilienspiegel. Alle Rechte vorbehalten.</span>
+      <span>Alle Angaben ohne Gewähr. Keine Anlage- oder Rechtsberatung.</span>
+    </div>
+  </div>
+</footer>
+
+
+</section>
+<section class="pg" id="pg-marktbericht" data-title="Marktbericht 2026: Was Luxusimmobilien in Wien jetzt kosten | Immobilienspiegel" hidden>
+
+
+<div class="topbar">
+  <div class="wrap">
+    <span>Wien · Mittwoch, 16. September 2026</span>
+    <span class="tb-right">
+      <a data-page="ueber-uns">Über die Redaktion</a>
+      <a data-page="impressum">Impressum und Offenlegung</a>
+    </span>
+  </div>
+</div>
+
+<header class="masthead">
+  <a class="brand" data-page="start" aria-label="Immobilienspiegel Startseite">
+    <img src="assets/logo.png" alt="Immobilienspiegel Logo" class="brand-img"
+         onload="document.getElementById('wm-fallback').style.display='none'"
+         onerror="this.style.display='none'">
+    <span id="wm-fallback" style="display:flex;flex-direction:column;align-items:center;gap:10px">
+      <svg width="44" height="56" viewBox="0 0 56 72" fill="none" aria-hidden="true">
+        <path d="M5 69 V26 Q5 6 28 6 Q51 6 51 26 V69" stroke="#a8874d" stroke-width="2.6"/>
+        <line x1="11" y1="44" x2="45" y2="44" stroke="#a8874d" stroke-width="1.2"/>
+        <g stroke="#1e3a31" stroke-width="2">
+          <path d="M17 28 L28 19 L39 28"/>
+          <line x1="20" y1="31" x2="20" y2="40"/>
+          <line x1="28" y1="31" x2="28" y2="40"/>
+          <line x1="36" y1="31" x2="36" y2="40"/>
+        </g>
+        <g stroke="#1e3a31" stroke-width="2" opacity="0.32">
+          <path d="M17 60 L28 69 L39 60"/>
+          <line x1="20" y1="57" x2="20" y2="48"/>
+          <line x1="28" y1="57" x2="28" y2="48"/>
+          <line x1="36" y1="57" x2="36" y2="48"/>
+        </g>
+      </svg>
+      <span class="brand-word">Immobilien<span class="spiegel">spiegel</span></span>
+    </span>
+    <span class="brand-claim">Das Magazin für den österreichischen Immobilienmarkt</span>
+  </a>
+</header>
+
+<nav class="nav" aria-label="Hauptnavigation">
+  <div class="wrap">
+    <a data-page="start">Start</a>
+    <a data-page="marktbericht" class="active">Markt und Preise</a>
+    <a data-page="bezirke">Lagen und Bezirke</a>
+    <a data-page="vergleich">Anbieter im Vergleich</a>
+    <a data-page="kaufnebenkosten">Ratgeber</a>
+    <a data-page="ueber-uns">Über uns</a>
+  </div>
+</nav>
+
+<div class="wrap breadcrumb">
+  <a data-page="start">Start</a> › <a data-page="marktbericht">Markt und Preise</a> › Marktbericht 2026
+</div>
+
+<header class="article-head">
+  <div class="wrap">
+    <span class="kicker">Markt und Preise · Wien</span>
+    <h1>Marktbericht 2026: Was Luxusimmobilien in Wien jetzt kosten</h1>
+    <p class="lede">Nach der Preiskorrektur der Jahre 2023 und 2024 hat sich der Wiener Wohnungsmarkt gefangen, und das Luxussegment zeigt sich einmal mehr als der widerstandsfähigste Teil des Markts. Ein Überblick über Quadratmeterpreise in den Spitzenlagen, die Angebotslage und die Treiber dahinter.</p>
+    <div class="meta">
+      <span>Redaktion Immobilienspiegel</span>
+      <span class="dot">Veröffentlicht am 28. Juli 2026</span>
+      <span class="dot">Stand: 6. August 2026</span>
+      <span class="dot">9 Min. Lesezeit</span>
+    </div>
+  </div>
+</header>
+
+<main class="article-body">
+  <div class="wrap article-grid">
+    <article class="article-content">
+
+      <figure class="article-lead">
+        <img src="assets/artikel-skyline.jpg" alt="Skyline von Wien an der Donau">
+        <figcaption>Wien wächst, die Spitzenlagen nicht: Blick über die Donau auf die Stadt. Foto: <a href="https://commons.wikimedia.org/wiki/File:Vienna_skyline_across_the_Danube_river.jpg" rel="nofollow">Sohom Datta</a>, <a href="https://creativecommons.org/licenses/by/4.0/deed.de" rel="nofollow">CC BY 4.0</a>, via Wikimedia Commons</figcaption>
+      </figure>
+
+      <div class="hinweis">
+        <strong>Zu den Zahlen in diesem Beitrag:</strong> Für das oberste Marktsegment existiert keine amtliche Preisstatistik. Die genannten Bandbreiten sind Richtwerte, zusammengetragen aus den laufend erscheinenden Marktberichten großer Wiener Häuser (u.a. EHL, Otto Immobilien), dem Immobilienpreisspiegel der WKO und der Immobilienmarktanalyse der Oesterreichischen Nationalbank. Alle Quellen sind am Beitragsende verlinkt. Einzelobjekte können deutlich abweichen.
+      </div>
+
+      <h2>Die Preislage in den Wiener Spitzenlagen</h2>
+      <p>Wer 2026 in Wien im obersten Segment kauft, bewegt sich je nach Lage und Objektqualität in folgenden Bandbreiten pro Quadratmeter Wohnfläche:</p>
+      <div class="table-scroll">
+        <table class="vgl">
+          <caption>Richtwert-Bandbreiten für hochwertige Bestandsobjekte und Neubau-Erstbezug in Top-Qualität, Stand Sommer 2026. Quellen am Beitragsende.</caption>
+          <thead>
+            <tr><th>Lage</th><th>Typische Bandbreite</th><th>Prägende Objekttypen</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>1010 Innere Stadt</strong></td><td>€ 18.000 – 26.000</td><td>Palais-Etagen, Dachgeschoß-Ausbauten, Ringstraßen-Altbau</td></tr>
+            <tr><td><strong>1190 Döbling</strong> (Cottage, Grinzing)</td><td>€ 7.500 – 12.000</td><td>Villen, Gartenwohnungen, Neubau-Projekte mit Weitblick</td></tr>
+            <tr><td><strong>1130 Hietzing</strong></td><td>€ 7.000 – 11.000</td><td>Gründerzeitvillen, Parklagen um Schönbrunn</td></tr>
+            <tr><td><strong>1040 Wieden</strong></td><td>€ 8.000 – 12.500</td><td>Repräsentativer Altbau nahe Karlsplatz und Belvedere</td></tr>
+            <tr><td><strong>1180 Währing</strong> (Cottage)</td><td>€ 7.000 – 10.500</td><td>Cottage-Villen, großzügige Altbau-Etagen</td></tr>
+            <tr><td><strong>1030 Landstraße</strong> (Botschaftsviertel)</td><td>€ 7.500 – 13.000</td><td>Neubau-Projekte am Park, Botschaftsnähe</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Nach oben ist die Skala offen: Für außergewöhnliche Dachgeschoß-Objekte in der Inneren Stadt mit Terrassen und Blickachsen wurden in den vergangenen Jahren wiederholt Preise deutlich oberhalb dieser Bandbreiten berichtet. Solche Transaktionen sind Einzelfälle und werden häufig <a data-page="off-market">off-market</a> abgewickelt, tauchen also in keiner Inseratsstatistik auf.</p>
+
+      <h2>Was den Markt 2026 prägt</h2>
+      <h3>1. Die Zinswende ist verdaut</h3>
+      <p>Die Preiskorrektur der Jahre 2023 und 2024 traf vor allem das kreditfinanzierte mittlere Segment. Mit den Zinssenkungen der EZB und dem Auslaufen der KIM-Verordnung Mitte 2025 hat sich die Finanzierungslage spürbar entspannt, was die Nachfrage breit stützt. Das Luxussegment war davon ohnehin nur am Rande betroffen: Käufe im obersten Segment werden überdurchschnittlich oft mit hohem Eigenkapitalanteil oder zur Gänze ohne Fremdfinanzierung abgewickelt.</p>
+      <h3>2. Das Angebot in den Top-Lagen bleibt strukturell knapp</h3>
+      <p>Die Innere Stadt wächst nicht. Der Bestand an Palais-Etagen und hochwertigen Altbauten ist fix, Dachgeschoß-Reserven sind weitgehend gehoben, und der Denkmalschutz setzt Neubauprojekten enge Grenzen. Diese strukturelle Knappheit ist der Kern der Wertstabilität im Wiener Luxussegment und unterscheidet es von Märkten mit hoher Neubauleistung.</p>
+      <h3>3. Internationale Nachfrage als Konstante</h3>
+      <p>Wien verbindet politische Stabilität, Rechtssicherheit und eine in Europa seltene Lebensqualität; die Stadt führt internationale Lebensqualitäts-Rankings seit Jahren an. Für vermögende Käufer aus dem Ausland bleibt Wohneigentum in Wien damit ein Sicherheitsinvestment. Anbieter mit internationalen Netzwerken berichten von konstanter Nachfrage aus Deutschland, der Schweiz, den USA und dem Nahen Osten; einen Überblick über die Anbindung der Wiener Büros an internationale Netzwerke gibt unser <a data-page="vergleich">Anbietervergleich</a>.</p>
+
+      <h2>Was das für Verkäufer bedeutet</h2>
+      <p>Verkäufer von Top-Objekten treffen 2026 auf einen aufnahmefähigen Markt mit knappem Angebot, also auf gute Bedingungen. Entscheidend bleibt die Preisfindung: Ein überzogener Einstiegspreis schadet auch im Luxussegment, weil Objekte mit langer Vermarktungsdauer als schwer verkäuflich wahrgenommen werden. Professionelle Bewertung und ein Vermarktungskonzept, das internationale Käufer erreicht, sind die beiden Hebel mit dem größten Effekt auf den Erlös.</p>
+
+      <h2>Was das für Käufer bedeutet</h2>
+      <p>Käufer sollten die Gesamtkosten realistisch kalkulieren: Zum Kaufpreis kommen in Österreich rund zehn Prozent <a data-page="kaufnebenkosten">Kaufnebenkosten</a>. Im obersten Segment lohnt zudem der Blick auf den stillen Markt: Wer nur öffentliche Inserate beobachtet, sieht einen Teil des Angebots schlicht nicht. Zugang schaffen Suchmandate bei spezialisierten Büros, die Off-Market-Portfolios führen.</p>
+
+      <div class="quellen">
+        <h2>Quellen und Datenbasis</h2>
+        <ol>
+          <li>Oesterreichische Nationalbank, Immobilienmarktanalysen und Immobilienpreisindex: <a href="https://www.oenb.at/" rel="nofollow">oenb.at</a></li>
+          <li>WKO, Immobilienpreisspiegel (jährlich): <a href="https://www.wko.at/" rel="nofollow">wko.at</a></li>
+          <li>Statistik Austria, Bereich Wohnen und Gebäude: <a href="https://www.statistik.at/" rel="nofollow">statistik.at</a></li>
+          <li>EHL Immobilien, Wohnungsmarktberichte Wien: <a href="https://www.ehl.at/" rel="nofollow">ehl.at</a></li>
+          <li>Otto Immobilien, Wohnmarktbericht Wien (halbjährlich): <a href="https://www.otto.at/" rel="nofollow">otto.at</a></li>
+          <li>Zur KIM-Verordnung und ihrem Auslaufen: Finanzmarktaufsicht Österreich, <a href="https://www.fma.gv.at/" rel="nofollow">fma.gv.at</a></li>
+        </ol>
+      </div>
+
+    </article>
+
+    <aside class="sidebar">
+      <div>
+        <h4>Meist gelesen</h4>
+        <ul>
+          <li><a data-page="vergleich">Die besten Makler für Luxusimmobilien in Wien: der Vergleich</a><span class="mini-meta">Anbieter im Vergleich · 6. August 2026</span></li>
+          <li><a data-page="bezirke">Die besten Bezirke für Luxusimmobilien in Wien</a><span class="mini-meta">Lagen und Bezirke · 21. Juli 2026</span></li>
+          <li><a data-page="off-market">Off-Market: Wie der stille Handel funktioniert</a><span class="mini-meta">Diskreter Markt · 30. Juli 2026</span></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Kurz erklärt</h4>
+        <ul>
+          <li><strong>KIM-VO:</strong> Kreditvergabe-Regeln für Wohnimmobilien, Mitte 2025 ausgelaufen</li>
+          <li><strong>Off-Market:</strong> Verkauf ohne öffentliches Inserat, über geprüfte Interessenten</li>
+          <li><strong>Erstbezug:</strong> Neubau oder Generalsanierung ohne Vornutzer</li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">Immobilien<span class="spiegel">spiegel</span></div>
+        <p>Der Immobilienspiegel ist ein redaktionelles Online-Magazin zum österreichischen Immobilienmarkt mit Schwerpunkt Wien und Luxussegment. Alle Übersichten und Reihungen folgen der im jeweiligen Beitrag dokumentierten Methodik mit öffentlich nachprüfbaren Quellen.</p>
+      </div>
+      <div>
+        <h5>Rubriken</h5>
+        <ul>
+          <li><a data-page="marktbericht">Markt und Preise</a></li>
+          <li><a data-page="bezirke">Lagen und Bezirke</a></li>
+          <li><a data-page="vergleich">Anbieter im Vergleich</a></li>
+          <li><a data-page="kaufnebenkosten">Ratgeber</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Redaktion</h5>
+        <ul>
+          <li><a data-page="ueber-uns">Über uns und Methodik</a></li>
+          <li><a data-page="ueber-uns" data-anchor="kontakt">Kontakt</a></li>
+          <li><a data-page="impressum" data-anchor="offenlegung">Transparenz</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Rechtliches</h5>
+        <ul>
+          <li><a data-page="impressum">Impressum</a></li>
+          <li><a data-page="impressum" data-anchor="offenlegung">Offenlegung § 25 MedienG</a></li>
+          <li><a data-page="datenschutz">Datenschutz</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-legal">
+      <span>© 2026 Immobilienspiegel. Alle Rechte vorbehalten.</span>
+      <span>Alle Angaben ohne Gewähr. Keine Anlage- oder Rechtsberatung.</span>
+    </div>
+  </div>
+</footer>
+
+
+</section>
+<section class="pg" id="pg-bezirke" data-title="Die besten Bezirke für Luxusimmobilien in Wien: der Lagen-Guide | Immobilienspiegel" hidden>
+
+
+<div class="topbar">
+  <div class="wrap">
+    <span>Wien · Mittwoch, 16. September 2026</span>
+    <span class="tb-right">
+      <a data-page="ueber-uns">Über die Redaktion</a>
+      <a data-page="impressum">Impressum und Offenlegung</a>
+    </span>
+  </div>
+</div>
+
+<header class="masthead">
+  <a class="brand" data-page="start" aria-label="Immobilienspiegel Startseite">
+    <img src="assets/logo.png" alt="Immobilienspiegel Logo" class="brand-img"
+         onload="document.getElementById('wm-fallback').style.display='none'"
+         onerror="this.style.display='none'">
+    <span id="wm-fallback" style="display:flex;flex-direction:column;align-items:center;gap:10px">
+      <svg width="44" height="56" viewBox="0 0 56 72" fill="none" aria-hidden="true">
+        <path d="M5 69 V26 Q5 6 28 6 Q51 6 51 26 V69" stroke="#a8874d" stroke-width="2.6"/>
+        <line x1="11" y1="44" x2="45" y2="44" stroke="#a8874d" stroke-width="1.2"/>
+        <g stroke="#1e3a31" stroke-width="2">
+          <path d="M17 28 L28 19 L39 28"/>
+          <line x1="20" y1="31" x2="20" y2="40"/>
+          <line x1="28" y1="31" x2="28" y2="40"/>
+          <line x1="36" y1="31" x2="36" y2="40"/>
+        </g>
+        <g stroke="#1e3a31" stroke-width="2" opacity="0.32">
+          <path d="M17 60 L28 69 L39 60"/>
+          <line x1="20" y1="57" x2="20" y2="48"/>
+          <line x1="28" y1="57" x2="28" y2="48"/>
+          <line x1="36" y1="57" x2="36" y2="48"/>
+        </g>
+      </svg>
+      <span class="brand-word">Immobilien<span class="spiegel">spiegel</span></span>
+    </span>
+    <span class="brand-claim">Das Magazin für den österreichischen Immobilienmarkt</span>
+  </a>
+</header>
+
+<nav class="nav" aria-label="Hauptnavigation">
+  <div class="wrap">
+    <a data-page="start">Start</a>
+    <a data-page="marktbericht">Markt und Preise</a>
+    <a data-page="bezirke" class="active">Lagen und Bezirke</a>
+    <a data-page="vergleich">Anbieter im Vergleich</a>
+    <a data-page="kaufnebenkosten">Ratgeber</a>
+    <a data-page="ueber-uns">Über uns</a>
+  </div>
+</nav>
+
+<div class="wrap breadcrumb">
+  <a data-page="start">Start</a> › <a data-page="bezirke">Lagen und Bezirke</a> › Die besten Bezirke für Luxusimmobilien
+</div>
+
+<header class="article-head">
+  <div class="wrap">
+    <span class="kicker">Lagen und Bezirke · Wien</span>
+    <h1>Die besten Bezirke für Luxusimmobilien in Wien: der Lagen-Guide</h1>
+    <p class="lede">Wien hat 23 Bezirke, aber nur eine Handvoll echter Luxuslagen, und sie könnten unterschiedlicher kaum sein: das urbane Palais-Parkett der Inneren Stadt, die grünen Cottage-Viertel im Nordwesten, die Villenruhe von Hietzing. Welche Lage zu welchem Lebensentwurf passt.</p>
+    <div class="meta">
+      <span>Redaktion Immobilienspiegel</span>
+      <span class="dot">Veröffentlicht am 21. Juli 2026</span>
+      <span class="dot">Stand: 6. August 2026</span>
+      <span class="dot">10 Min. Lesezeit</span>
+    </div>
+  </div>
+</header>
+
+<main class="article-body">
+  <div class="wrap article-grid">
+    <article class="article-content">
+
+      <figure class="article-lead">
+        <img src="assets/artikel-grinzing.jpg" alt="Weinberge in Grinzing oberhalb von Wien">
+        <figcaption>Weinberge über Grinzing: Döblings grüner Rand gehört zu den begehrtesten Wohnlagen der Stadt. Foto: <a href="https://commons.wikimedia.org/wiki/File:Grinzing_Weinberge.jpg" rel="nofollow">Otto Domes</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.de" rel="nofollow">CC BY-SA 4.0</a>, via Wikimedia Commons</figcaption>
+      </figure>
+
+      <p>Die Preisbandbreiten in diesem Guide sind Richtwerte für hochwertige Objekte, hergeleitet in unserem <a data-page="marktbericht">Marktbericht 2026</a>, dort finden sich auch alle Datenquellen. Was ein Bezirk jenseits der Zahlen bedeutet, welche Mikrolage zählt und welche Objekttypen das Bild prägen, klärt dieser Überblick.</p>
+
+      <h2>1010 Innere Stadt: das Maß aller Dinge</h2>
+      <p>Innerhalb der Ringstraße konzentriert sich, was den Wiener Luxusmarkt international bekannt macht: barocke Palais, Ringstraßen-Prunk, ausgebaute Dachgeschoße mit Blick auf den Stephansdom. Das Angebot ist strukturell fix, denn gebaut wird hier praktisch nichts mehr, und der Denkmalschutz wacht über den Bestand. Wer hier kauft, kauft neben Wohnfläche vor allem Unvermehrbarkeit. Mit Quadratmeterpreisen von rund 18.000 bis 26.000 Euro, bei Ausnahmeobjekten darüber, ist die Innere Stadt die mit Abstand teuerste Lage Österreichs.</p>
+      <p><strong>Passt für:</strong> Käufer, die urbane Repräsentanz suchen, internationale Investoren, Liebhaber historischer Substanz. Weniger geeignet für Familien mit Gartenwunsch.</p>
+
+      <h2>1190 Döbling: Cottage, Weinberge, Weitblick</h2>
+      <p>Döbling verbindet Villenkultur mit Wienerwald-Nähe und Heurigen-Romantik. Das Cottage-Viertel (gemeinsam mit Währing) ist seit dem 19. Jahrhundert die klassische Adresse des gehobenen Bürgertums; in Grinzing, Sievering und am Kaasgraben dominieren Villen mit Garten, dazu kommen Neubauprojekte mit Blick über die Stadt. Bandbreite: rund 7.500 bis 12.000 Euro pro Quadratmeter für Top-Objekte.</p>
+      <p><strong>Passt für:</strong> Familien, die Platz und Grün wollen, ohne die Stadt aufzugeben; Käufer mit Faible für Gründerzeit-Villen.</p>
+
+      <h2>1130 Hietzing: die diskrete Grande Dame</h2>
+      <p>Rund um Schönbrunn liegt Wiens traditionsreichster Villenbezirk: Alt-Hietzing, Lainz und die Gegend um den Küniglberg stehen für großbürgerliche Ruhe, alte Bäume und Jahrhundertwende-Architektur, darunter Werke von Otto Wagner und Josef Hoffmann. Hietzing ist weniger international geprägt als die Innere Stadt und gilt als Markt der leisen Töne, in dem viele Objekte <a data-page="off-market">diskret den Besitzer wechseln</a>. Bandbreite: rund 7.000 bis 11.000 Euro.</p>
+      <p><strong>Passt für:</strong> Käufer, die Understatement und Etabliertheit suchen; Architekturliebhaber.</p>
+
+      <h2>1180 Währing: Cottage-Eleganz mit Uni-Nähe</h2>
+      <p>Der Währinger Teil des Cottage-Viertels punktet mit Alleen, Jugendstil-Villen und kurzen Wegen in die Stadt. Währing ist etwas urbaner als Döbling und bei akademischen Haushalten traditionell beliebt. Neben Villen prägen großzügige Altbau-Etagen den Markt. Bandbreite: rund 7.000 bis 10.500 Euro.</p>
+      <p><strong>Passt für:</strong> Käufer, die das Cottage-Flair wollen, aber städtischer leben.</p>
+
+      <h2>1040 Wieden: klein, zentral, gefragt</h2>
+      <p>Zwischen Karlsplatz und Belvedere liegt einer der dichtesten Mikro-Luxusmärkte der Stadt: repräsentativer Altbau in Bestlage, die Nähe zu Oper und Innenstadt zu Fuß, dazu ein lebendiges Grätzel-Leben um den Naschmarkt-Rand. Wieden ist die urbane Alternative für alle, denen die Innere Stadt zu museal ist. Bandbreite: rund 8.000 bis 12.500 Euro.</p>
+      <p><strong>Passt für:</strong> urbane Käufer, Zweitwohnsitz-Nutzer, Design-affine Klientel.</p>
+
+      <h2>1030 Landstraße: der Aufsteiger am Park</h2>
+      <p>Das Botschaftsviertel rund um Rennweg und Jacquingasse hat sich mit hochwertigen Neubauprojekten am Rand des Botanischen Gartens und des Belvedere-Parks in die Spitzengruppe geschoben. Hier findet, was in der Inneren Stadt kaum existiert: Neubau-Erstbezug im Luxussegment mit Concierge, Tiefgarage und Freiflächen. Bandbreite: rund 7.500 bis 13.000 Euro, Projektspitzen darüber.</p>
+      <p><strong>Passt für:</strong> Käufer, die Neubaukomfort mit Parklage verbinden wollen; internationale Klientel mit Botschaftsbezug.</p>
+
+      <h2>Ehrenvolle Erwähnungen</h2>
+      <p>Josefstadt (1080) und Neubau (1070) bieten bürgerliche Eleganz und Kreativszene-Nähe mit einzelnen Top-Objekten, ohne flächige Luxuslage zu sein. Am Stadtrand punkten Neustift am Walde (1190) und Mauer (1230) mit Villen im Grünen. Und wer aufs Umland schaut: Klosterneuburg und der Süden Richtung Mödling und Perchtoldsdorf sind die klassischen Speckgürtel-Alternativen mit mehr Grundstück fürs Geld.</p>
+
+      <h2>Drei Faustregeln für die Lagewahl</h2>
+      <ol>
+        <li><strong>Mikrolage schlägt Bezirk:</strong> Eine ruhige Seitengasse in Wieden kann wertvoller sein als eine laute Hauptstraße in Döbling. Entscheidend sind Straße, Stockwerk, Ausrichtung und Blick.</li>
+        <li><strong>Unvermehrbarkeit zahlt sich aus:</strong> Lagen ohne Neubaupotenzial (Innere Stadt, Alt-Hietzing, Cottage) haben die stabilste Preishistorie, weil das Angebot nicht wachsen kann.</li>
+        <li><strong>Der stille Markt ist in den besten Lagen am größten:</strong> Je exklusiver die Lage, desto höher der Anteil diskret gehandelter Objekte. Wer nur Inserate liest, unterschätzt das Angebot; mehr dazu im Beitrag über den <a data-page="off-market">Off-Market-Handel</a> und im <a data-page="vergleich">Anbietervergleich</a>.</li>
+      </ol>
+
+      <div class="quellen">
+        <h2>Quellen und weiterführende Links</h2>
+        <ol>
+          <li>Preisbandbreiten und Datenquellen: <a data-page="marktbericht">Immobilienspiegel-Marktbericht 2026</a> (OeNB, WKO-Immobilienpreisspiegel, EHL, Otto Immobilien)</li>
+          <li>Stadt Wien, Bezirksporträts und Kulturgutkataster: <a href="https://www.wien.gv.at/" rel="nofollow">wien.gv.at</a></li>
+          <li>Bundesdenkmalamt, Denkmalverzeichnis: <a href="https://www.bda.gv.at/" rel="nofollow">bda.gv.at</a></li>
+        </ol>
+      </div>
+
+    </article>
+
+    <aside class="sidebar">
+      <div>
+        <h4>Meist gelesen</h4>
+        <ul>
+          <li><a data-page="vergleich">Die besten Makler für Luxusimmobilien in Wien: der Vergleich</a><span class="mini-meta">Anbieter im Vergleich · 6. August 2026</span></li>
+          <li><a data-page="marktbericht">Marktbericht 2026: Was Luxusimmobilien in Wien jetzt kosten</a><span class="mini-meta">Markt und Preise · 28. Juli 2026</span></li>
+          <li><a data-page="kaufnebenkosten">Kaufnebenkosten in Österreich: der Überblick</a><span class="mini-meta">Ratgeber · 14. Juli 2026</span></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Preisband kompakt</h4>
+        <ul>
+          <li><strong>1010</strong> € 18.000 – 26.000 / m²</li>
+          <li><strong>1030</strong> € 7.500 – 13.000 / m²</li>
+          <li><strong>1040</strong> € 8.000 – 12.500 / m²</li>
+          <li><strong>1130</strong> € 7.000 – 11.000 / m²</li>
+          <li><strong>1180</strong> € 7.000 – 10.500 / m²</li>
+          <li><strong>1190</strong> € 7.500 – 12.000 / m²</li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">Immobilien<span class="spiegel">spiegel</span></div>
+        <p>Der Immobilienspiegel ist ein redaktionelles Online-Magazin zum österreichischen Immobilienmarkt mit Schwerpunkt Wien und Luxussegment. Alle Übersichten und Reihungen folgen der im jeweiligen Beitrag dokumentierten Methodik mit öffentlich nachprüfbaren Quellen.</p>
+      </div>
+      <div>
+        <h5>Rubriken</h5>
+        <ul>
+          <li><a data-page="marktbericht">Markt und Preise</a></li>
+          <li><a data-page="bezirke">Lagen und Bezirke</a></li>
+          <li><a data-page="vergleich">Anbieter im Vergleich</a></li>
+          <li><a data-page="kaufnebenkosten">Ratgeber</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Redaktion</h5>
+        <ul>
+          <li><a data-page="ueber-uns">Über uns und Methodik</a></li>
+          <li><a data-page="ueber-uns" data-anchor="kontakt">Kontakt</a></li>
+          <li><a data-page="impressum" data-anchor="offenlegung">Transparenz</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Rechtliches</h5>
+        <ul>
+          <li><a data-page="impressum">Impressum</a></li>
+          <li><a data-page="impressum" data-anchor="offenlegung">Offenlegung § 25 MedienG</a></li>
+          <li><a data-page="datenschutz">Datenschutz</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-legal">
+      <span>© 2026 Immobilienspiegel. Alle Rechte vorbehalten.</span>
+      <span>Alle Angaben ohne Gewähr. Keine Anlage- oder Rechtsberatung.</span>
+    </div>
+  </div>
+</footer>
+
+
+</section>
+<section class="pg" id="pg-kaufnebenkosten" data-title="Kaufnebenkosten in Österreich 2026: alle Posten im Überblick | Immobilienspiegel" hidden>
+
+
+<div class="topbar">
+  <div class="wrap">
+    <span>Wien · Mittwoch, 16. September 2026</span>
+    <span class="tb-right">
+      <a data-page="ueber-uns">Über die Redaktion</a>
+      <a data-page="impressum">Impressum und Offenlegung</a>
+    </span>
+  </div>
+</div>
+
+<header class="masthead">
+  <a class="brand" data-page="start" aria-label="Immobilienspiegel Startseite">
+    <img src="assets/logo.png" alt="Immobilienspiegel Logo" class="brand-img"
+         onload="document.getElementById('wm-fallback').style.display='none'"
+         onerror="this.style.display='none'">
+    <span id="wm-fallback" style="display:flex;flex-direction:column;align-items:center;gap:10px">
+      <svg width="44" height="56" viewBox="0 0 56 72" fill="none" aria-hidden="true">
+        <path d="M5 69 V26 Q5 6 28 6 Q51 6 51 26 V69" stroke="#a8874d" stroke-width="2.6"/>
+        <line x1="11" y1="44" x2="45" y2="44" stroke="#a8874d" stroke-width="1.2"/>
+        <g stroke="#1e3a31" stroke-width="2">
+          <path d="M17 28 L28 19 L39 28"/>
+          <line x1="20" y1="31" x2="20" y2="40"/>
+          <line x1="28" y1="31" x2="28" y2="40"/>
+          <line x1="36" y1="31" x2="36" y2="40"/>
+        </g>
+        <g stroke="#1e3a31" stroke-width="2" opacity="0.32">
+          <path d="M17 60 L28 69 L39 60"/>
+          <line x1="20" y1="57" x2="20" y2="48"/>
+          <line x1="28" y1="57" x2="28" y2="48"/>
+          <line x1="36" y1="57" x2="36" y2="48"/>
+        </g>
+      </svg>
+      <span class="brand-word">Immobilien<span class="spiegel">spiegel</span></span>
+    </span>
+    <span class="brand-claim">Das Magazin für den österreichischen Immobilienmarkt</span>
+  </a>
+</header>
+
+<nav class="nav" aria-label="Hauptnavigation">
+  <div class="wrap">
+    <a data-page="start">Start</a>
+    <a data-page="marktbericht">Markt und Preise</a>
+    <a data-page="bezirke">Lagen und Bezirke</a>
+    <a data-page="vergleich">Anbieter im Vergleich</a>
+    <a data-page="kaufnebenkosten" class="active">Ratgeber</a>
+    <a data-page="ueber-uns">Über uns</a>
+  </div>
+</nav>
+
+<div class="wrap breadcrumb">
+  <a data-page="start">Start</a> › <a data-page="kaufnebenkosten">Ratgeber</a> › Kaufnebenkosten in Österreich
+</div>
+
+<header class="article-head">
+  <div class="wrap">
+    <span class="kicker">Ratgeber · Kauf und Recht</span>
+    <h1>Kaufnebenkosten in Österreich 2026: alle Posten im Überblick</h1>
+    <p class="lede">Wer in Österreich eine Immobilie kauft, zahlt deutlich mehr als den Kaufpreis: Steuer, Grundbuch, Makler und Vertragserrichtung summieren sich auf rund zehn Prozent. Alle Posten, die gesetzlichen Grundlagen und ein Rechenbeispiel für ein Objekt um zwei Millionen Euro.</p>
+    <div class="meta">
+      <span>Redaktion Immobilienspiegel</span>
+      <span class="dot">Veröffentlicht am 14. Juli 2026</span>
+      <span class="dot">Stand: 6. August 2026</span>
+      <span class="dot">7 Min. Lesezeit</span>
+    </div>
+  </div>
+</header>
+
+<main class="article-body">
+  <div class="wrap article-grid">
+    <article class="article-content">
+
+      <figure class="article-lead">
+        <img src="assets/artikel-justizpalast.jpg" alt="Justitia-Statue im Wiener Justizpalast">
+        <figcaption>Justitia im Wiener Justizpalast: Steuer, Grundbuch und Vertrag machen rund ein Zehntel des Kaufpreises aus. Foto: <a href="https://commons.wikimedia.org/wiki/File:AT_50473_Justizpalast_Wien,_Iustitia_-_Emanuel_Pendl_4388-HDR.jpg" rel="nofollow">Hubertl</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.de" rel="nofollow">CC BY-SA 4.0</a>, via Wikimedia Commons</figcaption>
+      </figure>
+
+      <h2>Die Posten im Einzelnen</h2>
+
+      <h3>Grunderwerbsteuer: 3,5 Prozent</h3>
+      <p>Beim entgeltlichen Erwerb fallen 3,5 Prozent des Kaufpreises an Grunderwerbsteuer an. Sie wird in der Regel vom Vertragserrichter selbst berechnet und an das Finanzamt abgeführt. Begünstigte Sätze gibt es im Familienverband; für den klassischen Kauf am freien Markt gilt der volle Satz.</p>
+
+      <h3>Eintragungsgebühr ins Grundbuch: 1,1 Prozent</h3>
+      <p>Die Eintragung des Eigentumsrechts kostet 1,1 Prozent der Bemessungsgrundlage. Wird eine Hypothek eingetragen, kommen weitere 1,2 Prozent des Pfandbetrags dazu. Für Eigenheim-Käufe bis 500.000 Euro galt zuletzt eine befristete Gebührenbefreiung unter engen Voraussetzungen; für Objekte im Luxussegment spielt sie wegen der Wertgrenze keine Rolle. Den aktuellen Stand der Befreiungen dokumentiert das offizielle Portal <a href="https://www.oesterreich.gv.at/" rel="nofollow">oesterreich.gv.at</a>.</p>
+
+      <h3>Maklerhonorar: bis zu 3 Prozent plus Umsatzsteuer</h3>
+      <p>Das Honorar ist per Immobilienmakler-Verordnung gedeckelt: Bei Kaufobjekten über 48.448,51 Euro sind es maximal 3 Prozent des Kaufpreises, zuzüglich 20 Prozent Umsatzsteuer, und zwar pro Vertragsseite. Käufer und Verkäufer zahlen also jeweils bis zu 3,6 Prozent brutto. Im Luxussegment sind Honorare häufig Verhandlungssache, etwa bei Alleinvermittlungsaufträgen. Welche Leistungen ein spezialisiertes Büro dafür erbringen sollte, zeigt unser <a data-page="vergleich">Anbietervergleich</a>.</p>
+
+      <h3>Vertragserrichtung und Treuhandschaft: rund 1 bis 2,5 Prozent</h3>
+      <p>Kaufvertrag, grundbuchsfähige Beglaubigungen und die treuhändische Abwicklung übernimmt ein Notar oder Rechtsanwalt. Übliche Größenordnung: ein bis zweieinhalb Prozent des Kaufpreises, bei hohen Kaufpreisen ist auch hier Spielraum für Pauschalvereinbarungen. Dazu kommen Barauslagen und Beglaubigungsgebühren.</p>
+
+      <h2>Rechenbeispiel: Altbau-Etage um 2 Millionen Euro</h2>
+      <div class="table-scroll">
+        <table class="vgl">
+          <caption>Beispielrechnung ohne Finanzierung, Vertragserrichtung mit 1,5 Prozent angesetzt, Maklerhonorar mit dem gesetzlichen Maximum. Individuelle Abweichungen möglich.</caption>
+          <thead>
+            <tr><th>Posten</th><th>Satz</th><th>Betrag</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Kaufpreis</td><td></td><td><strong>€ 2.000.000</strong></td></tr>
+            <tr><td>Grunderwerbsteuer</td><td>3,5 %</td><td>€ 70.000</td></tr>
+            <tr><td>Eintragungsgebühr Grundbuch</td><td>1,1 %</td><td>€ 22.000</td></tr>
+            <tr><td>Maklerhonorar inkl. USt</td><td>3 % + 20 % USt</td><td>€ 72.000</td></tr>
+            <tr><td>Vertragserrichtung und Treuhand</td><td>≈ 1,5 %</td><td>€ 30.000</td></tr>
+            <tr class="highlight"><td><strong>Nebenkosten gesamt</strong></td><td><strong>≈ 9,7 %</strong></td><td><strong>€ 194.000</strong></td></tr>
+            <tr><td><strong>Gesamtaufwand</strong></td><td></td><td><strong>€ 2.194.000</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Mit Fremdfinanzierung und Pfandrechtseintragung (1,2 Prozent des Pfandbetrags) sowie allfälligen Bankspesen steigt der Gesamtaufwand entsprechend. Für die Kalkulation im obersten Segment gilt die Faustregel: rund zehn Prozent auf den Kaufpreis aufschlagen.</p>
+
+      <h2>Drei Punkte, die Käufer oft übersehen</h2>
+      <ol>
+        <li><strong>Die Nebenkosten sind nicht finanzierbar wie der Kaufpreis:</strong> Banken erwarten, dass Steuer, Gebühren und Honorare aus Eigenmitteln kommen. Bei zwei Millionen Kaufpreis sind das rund 200.000 Euro zusätzlich zur Eigenkapitalquote.</li>
+        <li><strong>Betriebskosten und Rücklage prüfen:</strong> Bei Eigentumswohnungen lohnt vor dem Kauf ein Blick in die Rücklagenentwicklung und anstehende Sanierungen des Hauses, gerade beim Altbau.</li>
+        <li><strong>Beim Dachgeschoß-Erstbezug auf die Widmung achten:</strong> Terrassen, Aufzugsnachrüstung und Stellplätze sollten sauber im Wohnungseigentumsvertrag abgebildet sein. Das prüft der Vertragserrichter, aber erst, wenn man ihn früh genug einbindet.</li>
+      </ol>
+
+      <div class="quellen">
+        <h2>Quellen und Rechtsgrundlagen</h2>
+        <ol>
+          <li>Grunderwerbsteuergesetz und Gebühren: Bundesministerium für Finanzen, <a href="https://www.bmf.gv.at/" rel="nofollow">bmf.gv.at</a></li>
+          <li>Offizielles Amtsportal mit aktuellen Sätzen und Befreiungen: <a href="https://www.oesterreich.gv.at/" rel="nofollow">oesterreich.gv.at</a></li>
+          <li>Immobilienmakler-Verordnung (Höchstprovisionen): Rechtsinformationssystem des Bundes, <a href="https://www.ris.bka.gv.at/" rel="nofollow">ris.bka.gv.at</a></li>
+          <li>Grundbuchsgebühren: Bundesministerium für Justiz, <a href="https://www.bmj.gv.at/" rel="nofollow">bmj.gv.at</a></li>
+          <li>Konsumenteninformation zu Maklerprovisionen: Arbeiterkammer, <a href="https://www.arbeiterkammer.at/" rel="nofollow">arbeiterkammer.at</a></li>
+        </ol>
+      </div>
+
+    </article>
+
+    <aside class="sidebar">
+      <div>
+        <h4>Meist gelesen</h4>
+        <ul>
+          <li><a data-page="vergleich">Die besten Makler für Luxusimmobilien in Wien: der Vergleich</a><span class="mini-meta">Anbieter im Vergleich · 6. August 2026</span></li>
+          <li><a data-page="marktbericht">Marktbericht 2026: Was Luxusimmobilien in Wien jetzt kosten</a><span class="mini-meta">Markt und Preise · 28. Juli 2026</span></li>
+          <li><a data-page="off-market">Off-Market: Wie der stille Handel funktioniert</a><span class="mini-meta">Diskreter Markt · 30. Juli 2026</span></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Nebenkosten kompakt</h4>
+        <ul>
+          <li><strong>3,5 %</strong> Grunderwerbsteuer</li>
+          <li><strong>1,1 %</strong> Grundbucheintragung</li>
+          <li><strong>bis 3 % + USt</strong> Maklerhonorar</li>
+          <li><strong>1 – 2,5 %</strong> Vertrag und Treuhand</li>
+          <li><strong>≈ 10 %</strong> Daumenregel gesamt</li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">Immobilien<span class="spiegel">spiegel</span></div>
+        <p>Der Immobilienspiegel ist ein redaktionelles Online-Magazin zum österreichischen Immobilienmarkt mit Schwerpunkt Wien und Luxussegment. Alle Übersichten und Reihungen folgen der im jeweiligen Beitrag dokumentierten Methodik mit öffentlich nachprüfbaren Quellen.</p>
+      </div>
+      <div>
+        <h5>Rubriken</h5>
+        <ul>
+          <li><a data-page="marktbericht">Markt und Preise</a></li>
+          <li><a data-page="bezirke">Lagen und Bezirke</a></li>
+          <li><a data-page="vergleich">Anbieter im Vergleich</a></li>
+          <li><a data-page="kaufnebenkosten">Ratgeber</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Redaktion</h5>
+        <ul>
+          <li><a data-page="ueber-uns">Über uns und Methodik</a></li>
+          <li><a data-page="ueber-uns" data-anchor="kontakt">Kontakt</a></li>
+          <li><a data-page="impressum" data-anchor="offenlegung">Transparenz</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Rechtliches</h5>
+        <ul>
+          <li><a data-page="impressum">Impressum</a></li>
+          <li><a data-page="impressum" data-anchor="offenlegung">Offenlegung § 25 MedienG</a></li>
+          <li><a data-page="datenschutz">Datenschutz</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-legal">
+      <span>© 2026 Immobilienspiegel. Alle Rechte vorbehalten.</span>
+      <span>Alle Angaben ohne Gewähr. Keine Anlage- oder Rechtsberatung.</span>
+    </div>
+  </div>
+</footer>
+
+
+</section>
+<section class="pg" id="pg-off-market" data-title="Off-Market: Wie der stille Handel mit Wiener Luxusimmobilien funktioniert | Immobilienspiegel" hidden>
+
+
+<div class="topbar">
+  <div class="wrap">
+    <span>Wien · Mittwoch, 16. September 2026</span>
+    <span class="tb-right">
+      <a data-page="ueber-uns">Über die Redaktion</a>
+      <a data-page="impressum">Impressum und Offenlegung</a>
+    </span>
+  </div>
+</div>
+
+<header class="masthead">
+  <a class="brand" data-page="start" aria-label="Immobilienspiegel Startseite">
+    <img src="assets/logo.png" alt="Immobilienspiegel Logo" class="brand-img"
+         onload="document.getElementById('wm-fallback').style.display='none'"
+         onerror="this.style.display='none'">
+    <span id="wm-fallback" style="display:flex;flex-direction:column;align-items:center;gap:10px">
+      <svg width="44" height="56" viewBox="0 0 56 72" fill="none" aria-hidden="true">
+        <path d="M5 69 V26 Q5 6 28 6 Q51 6 51 26 V69" stroke="#a8874d" stroke-width="2.6"/>
+        <line x1="11" y1="44" x2="45" y2="44" stroke="#a8874d" stroke-width="1.2"/>
+        <g stroke="#1e3a31" stroke-width="2">
+          <path d="M17 28 L28 19 L39 28"/>
+          <line x1="20" y1="31" x2="20" y2="40"/>
+          <line x1="28" y1="31" x2="28" y2="40"/>
+          <line x1="36" y1="31" x2="36" y2="40"/>
+        </g>
+        <g stroke="#1e3a31" stroke-width="2" opacity="0.32">
+          <path d="M17 60 L28 69 L39 60"/>
+          <line x1="20" y1="57" x2="20" y2="48"/>
+          <line x1="28" y1="57" x2="28" y2="48"/>
+          <line x1="36" y1="57" x2="36" y2="48"/>
+        </g>
+      </svg>
+      <span class="brand-word">Immobilien<span class="spiegel">spiegel</span></span>
+    </span>
+    <span class="brand-claim">Das Magazin für den österreichischen Immobilienmarkt</span>
+  </a>
+</header>
+
+<nav class="nav" aria-label="Hauptnavigation">
+  <div class="wrap">
+    <a data-page="start">Start</a>
+    <a data-page="marktbericht">Markt und Preise</a>
+    <a data-page="bezirke">Lagen und Bezirke</a>
+    <a data-page="vergleich">Anbieter im Vergleich</a>
+    <a data-page="kaufnebenkosten" class="active">Ratgeber</a>
+    <a data-page="ueber-uns">Über uns</a>
+  </div>
+</nav>
+
+<div class="wrap breadcrumb">
+  <a data-page="start">Start</a> › <a data-page="kaufnebenkosten">Ratgeber</a> › Off-Market-Immobilien
+</div>
+
+<header class="article-head">
+  <div class="wrap">
+    <span class="kicker">Diskreter Markt · Wien</span>
+    <h1>Off-Market: Wie der stille Handel mit Wiener Luxusimmobilien funktioniert</h1>
+    <p class="lede">Die bemerkenswertesten Transaktionen des Wiener Luxusmarkts finden statt, ohne dass je ein Inserat erscheint. Warum Eigentümer den stillen Weg wählen, wie ein Off-Market-Verkauf abläuft und wie Käufer Zugang zu diesem Markt bekommen.</p>
+    <div class="meta">
+      <span>Redaktion Immobilienspiegel</span>
+      <span class="dot">Veröffentlicht am 30. Juli 2026</span>
+      <span class="dot">Stand: 6. August 2026</span>
+      <span class="dot">6 Min. Lesezeit</span>
+    </div>
+  </div>
+</header>
+
+<main class="article-body">
+  <div class="wrap article-grid">
+    <article class="article-content">
+
+      <figure class="article-lead">
+        <img src="assets/artikel-palais.jpg" alt="Fassade des Palais Kinsky in Wien">
+        <figcaption>Palais Kinsky auf der Freyung: Objekte dieser Klasse wechseln den Besitzer meist ohne Inserat. Foto: <a href="https://commons.wikimedia.org/wiki/File:Wien_-_Palais_Kinsky_20180511-04.jpg" rel="nofollow">Pymouss</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.de" rel="nofollow">CC BY-SA 4.0</a>, via Wikimedia Commons</figcaption>
+      </figure>
+
+      <h2>Was Off-Market bedeutet</h2>
+      <p>Off-Market heißt: Ein Objekt wird verkauft, ohne öffentlich angeboten zu werden. Kein Portal-Inserat, keine Anzeige, oft nicht einmal ein Exposé im klassischen Sinn. Stattdessen spricht der beauftragte Makler gezielt eine kleine Zahl geprüfter Interessenten aus seinem Netzwerk an, häufig unter Verschwiegenheitsvereinbarung. Erst wenn ernsthaftes Interesse besteht, werden Adresse und Details offengelegt.</p>
+      <p>Wie groß dieser Markt ist, lässt sich naturgemäß nicht exakt beziffern, denn was nie inseriert wurde, taucht in keiner Angebotsstatistik auf. Marktteilnehmer im Wiener Luxussegment sprechen übereinstimmend von einem substanziellen Anteil der Transaktionen, in den besten Lagen der Inneren Stadt, Hietzings und des Cottage-Viertels eher von der Regel als der Ausnahme.</p>
+
+      <h2>Warum Eigentümer still verkaufen</h2>
+      <ul>
+        <li><strong>Diskretion:</strong> Prominente Eigentümer, Unternehmer in Verkaufsprozessen oder Erbengemeinschaften wollen nicht, dass Nachbarn, Geschäftspartner oder Medien vom Verkauf erfahren.</li>
+        <li><strong>Preisschutz:</strong> Ein öffentlich inseriertes Objekt, das lange am Markt hängt, gilt schnell als schwer verkäuflich. Der stille Verkauf vermeidet diesen Abnutzungseffekt.</li>
+        <li><strong>Testphase:</strong> Manche Eigentümer wollen zunächst ausloten, welcher Preis erzielbar ist, ohne sich öffentlich festzulegen.</li>
+        <li><strong>Sicherheit:</strong> Bei hochwertig eingerichteten Objekten reduziert der geprüfte Interessentenkreis das Risiko von Besichtigungstourismus.</li>
+      </ul>
+
+      <h2>So läuft ein Off-Market-Verkauf ab</h2>
+      <ol>
+        <li><strong>Bewertung und Mandat:</strong> Am Anfang steht eine professionelle Preiseinschätzung und ein Alleinvermittlungsauftrag, denn ohne Exklusivität funktioniert Diskretion nicht.</li>
+        <li><strong>Käuferauswahl:</strong> Der Makler gleicht das Objekt mit seiner Suchkundenkartei und seinem Netzwerk ab, bei international angebundenen Büros auch mit den Partnerorganisationen im Ausland.</li>
+        <li><strong>Kontrollierte Ansprache:</strong> Wenige, bonitätsgeprüfte Interessenten erhalten Informationen, gestaffelt und gegebenenfalls gegen Verschwiegenheitserklärung.</li>
+        <li><strong>Verhandlung und Abschluss:</strong> Besichtigungen finden einzeln statt, die Abwicklung folgt dem üblichen Weg über Vertragserrichter und Treuhandschaft, inklusive der normalen <a data-page="kaufnebenkosten">Kaufnebenkosten</a>.</li>
+      </ol>
+
+      <h2>Wie Käufer Zugang bekommen</h2>
+      <p>Der stille Markt ist für Käufer nur über die Büros erreichbar, die ihn führen. Der wirksamste Weg ist ein konkretes Suchmandat bei ein bis zwei spezialisierten Adressen: je präziser das Profil (Lage, Größe, Budget, Zeithorizont), desto eher wird man bei passenden Objekten früh angerufen. Mehrere Wiener Luxusbüros führen dedizierte Off-Market-Portfolios; Avantgarde Properties etwa weist eine <a href="https://www.avantgardeproperties.com/" rel="nofollow">eigene Off-Market-Sektion</a> aus, bei Häusern wie Otto Immobilien oder Marlies Muhr läuft die diskrete Vermarktung auf Anfrage. Welches Büro zu welchem Profil passt, zeigt der <a data-page="vergleich">große Anbietervergleich</a>.</p>
+
+      <h2>Worauf Verkäufer achten sollten</h2>
+      <p>Diskretion ist kein Ersatz für Marktspannung: Wer nur einen einzigen Interessenten sieht, verhandelt schwach. Ein gutes Off-Market-Mandat erzeugt kontrollierten Wettbewerb unter wenigen geeigneten Käufern. Zweitens gehört die Bewertung an den Anfang, nicht ans Ende: Ohne belastbare Preisbasis verschenkt der stille Verkauf genau die Transparenz, die der öffentliche Markt sonst liefert. Und drittens sollte das Mandat klar regeln, wer wann welche Informationen erhält, das ist der Kern des Diskretionsversprechens.</p>
+
+      <div class="quellen">
+        <h2>Quellen und weiterführende Links</h2>
+        <ol>
+          <li>Avantgarde Properties, Off-Market-Sektion und Leistungsbeschreibung: <a href="https://www.avantgardeproperties.com/" rel="nofollow">avantgardeproperties.com</a></li>
+          <li>Otto Immobilien, diskrete Vermarktung: <a href="https://www.otto.at/" rel="nofollow">otto.at</a></li>
+          <li>Marlies Muhr Immobilien: <a href="https://www.muhr-immobilien.com/" rel="nofollow">muhr-immobilien.com</a></li>
+          <li>Rechtliches zur Vermittlung (Maklergesetz, Alleinvermittlungsauftrag): <a href="https://www.ris.bka.gv.at/" rel="nofollow">ris.bka.gv.at</a></li>
+        </ol>
+      </div>
+
+    </article>
+
+    <aside class="sidebar">
+      <div>
+        <h4>Meist gelesen</h4>
+        <ul>
+          <li><a data-page="vergleich">Die besten Makler für Luxusimmobilien in Wien: der Vergleich</a><span class="mini-meta">Anbieter im Vergleich · 6. August 2026</span></li>
+          <li><a data-page="marktbericht">Marktbericht 2026: Was Luxusimmobilien in Wien jetzt kosten</a><span class="mini-meta">Markt und Preise · 28. Juli 2026</span></li>
+          <li><a data-page="bezirke">Die besten Bezirke für Luxusimmobilien in Wien</a><span class="mini-meta">Lagen und Bezirke · 21. Juli 2026</span></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Off-Market kompakt</h4>
+        <ul>
+          <li>Verkauf ohne öffentliches Inserat</li>
+          <li>Geprüfter, kleiner Interessentenkreis</li>
+          <li>Üblich in den besten Wiener Lagen</li>
+          <li>Zugang über Suchmandate bei Spezialisten</li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">Immobilien<span class="spiegel">spiegel</span></div>
+        <p>Der Immobilienspiegel ist ein redaktionelles Online-Magazin zum österreichischen Immobilienmarkt mit Schwerpunkt Wien und Luxussegment. Alle Übersichten und Reihungen folgen der im jeweiligen Beitrag dokumentierten Methodik mit öffentlich nachprüfbaren Quellen.</p>
+      </div>
+      <div>
+        <h5>Rubriken</h5>
+        <ul>
+          <li><a data-page="marktbericht">Markt und Preise</a></li>
+          <li><a data-page="bezirke">Lagen und Bezirke</a></li>
+          <li><a data-page="vergleich">Anbieter im Vergleich</a></li>
+          <li><a data-page="kaufnebenkosten">Ratgeber</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Redaktion</h5>
+        <ul>
+          <li><a data-page="ueber-uns">Über uns und Methodik</a></li>
+          <li><a data-page="ueber-uns" data-anchor="kontakt">Kontakt</a></li>
+          <li><a data-page="impressum" data-anchor="offenlegung">Transparenz</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Rechtliches</h5>
+        <ul>
+          <li><a data-page="impressum">Impressum</a></li>
+          <li><a data-page="impressum" data-anchor="offenlegung">Offenlegung § 25 MedienG</a></li>
+          <li><a data-page="datenschutz">Datenschutz</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-legal">
+      <span>© 2026 Immobilienspiegel. Alle Rechte vorbehalten.</span>
+      <span>Alle Angaben ohne Gewähr. Keine Anlage- oder Rechtsberatung.</span>
+    </div>
+  </div>
+</footer>
+
+
+</section>
+<script>
+(function(){
+  var pages=document.querySelectorAll('section.pg');
+  function show(key, anchor){
+    var found=false;
+    pages.forEach(function(p){ var on=(p.id==='pg-'+key); if(on) p.removeAttribute('hidden'); else p.setAttribute('hidden',''); if(on){found=true; document.title=p.getAttribute('data-title');} });
+    if(!found){ document.getElementById('pg-start').removeAttribute('hidden'); }
+    if(anchor){ var el=document.getElementById(anchor); if(el){ el.scrollIntoView(); return; } }
+    window.scrollTo(0,0);
+  }
+  document.addEventListener('click',function(e){
+    var a=e.target && e.target.closest ? e.target.closest('a[data-page]') : null; if(!a) return;
+    e.preventDefault(); e.stopPropagation(); show(a.getAttribute('data-page'), a.getAttribute('data-anchor'));
+  }, true);
+  show('start');
+})();
+</script>
+</body>
+</html>
